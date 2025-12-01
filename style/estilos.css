@@ -967,9 +967,11 @@ will-change: transform;
 #prova-social .ps-cta a:active{ transform: translateY(0); }
 
 /* ===== Seção: Para quem é ===== */
+/* ===== Seção: Para quem é — versão Black Friday ===== */
 #para-quem-e{
-  padding: 30px 15px;
-  background: #FFE86D;
+  padding: 40px 15px 50px;
+  background:
+    radial-gradient(circle at top, #003354 0%, #001321 45%, #000814 100%);
 }
 
 .pqe-map__wrap{
@@ -978,16 +980,18 @@ will-change: transform;
   padding: 20px 25px 20px 15px;
 }
 
+/* Título + lead */
 .pqe-map h2{
   margin: 0 0 20px 0;
   font-size: clamp(26px, 2.2vw, 40px);
   line-height: 1.12;
   text-align: center;
+  color: #F9FAFB;              /* antes era #001A27 */
 }
 
 .pqe-map .pqe-map__lead{
   margin: 0 0 16px 0;
-  color: #173845;
+  color: #E2F1FF;              /* antes era #173845 */
   line-height: 1.55;
   text-align: center;
   font-size: clamp(16px, 1.4vw, 19px);
@@ -1001,33 +1005,30 @@ will-change: transform;
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 22px;                             /* espaço entre estações */
+  gap: 22px;
   max-width: 520px;
-  z-index: 1;                            /* abaixo dos itens */
-  align-items: stretch;                 /* itens ocupam toda a largura */
+  z-index: 1;
+  align-items: stretch;
 }
 
 .pqe-map .pqe-map__line::before{
-  /* A própria “linha de metrô” */
   content: "";
   position: absolute;
   top: 0; bottom: 0;
-  left: 36px;                            /* mobile: linha na esquerda */
+  left: 36px;
   width: 4px;
   background: repeating-linear-gradient(
     to bottom,
-    #3FBFFF, #3FBFFF 14px,  /* navy */
-    #E7F7FF 14px, #E7F7FF 24px /* amarelo accent */
+    #3FBFFF, #3FBFFF 14px,
+    #FFE86D 14px, #FFE86D 24px
   );
   border-radius: 8px;
-
 }
 
 /* ===== Estações (itens) ===== */
 .pqe-map .pqe-item{
   display: grid;
-  grid-template-columns: 72px 1fr;       /* badge | bubble (mobile) */
+  grid-template-columns: 72px 1fr;
   align-items: center;
   gap: 10px;
   position: relative;
@@ -1043,12 +1044,12 @@ will-change: transform;
   display: grid;
   place-items: center;
   font-size: 26px;
-  background: #fff;
+  background: #E7F7FF;
   border: 3px solid #3FBFFF;
   box-shadow:
-    0 0 0 6px rgba(255,255,255,.78),
-    0 6px 16px rgba(63,191,255,.25);
-  z-index: 2;                             /* acima da linha */
+    0 0 0 6px rgba(0,0,0,.12),
+    0 6px 16px rgba(63,191,255,.35);
+  z-index: 2;
 }
 
 /* Balão de fala */
@@ -1057,14 +1058,13 @@ will-change: transform;
   background: #E7F7FF;
   border: 1px solid rgba(7,35,47,.08);
   border-radius: 16px;
-  padding: 12px 14px;
+  padding: 16px 20px;
   color: #06202B;
   line-height: 1.5;
-  padding: 16px 20px;
-  box-shadow: 0 8px 22px rgba(0,0,0,.08);
+  box-shadow: 0 8px 22px rgba(0,0,0,.22);
   text-align: center;
   max-width: 560px;
-  min-height: clamp(100px, 2vw, 125px); /* ajuste a gosto */
+  min-height: clamp(100px, 2vw, 125px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1086,10 +1086,11 @@ will-change: transform;
   font-weight: 400;
 }
 
+/* CTA já está alinhado com o resto (botão azul), mantive igual */
 #para-quem-e .pqe-map__cta a{
   display: block;
   width: fit-content;
-  margin: auto;
+  margin: 40px auto 0;
   color:#fff;
   font-weight:700;
   font-size: clamp(14px, 12px + 0.4vw, 18px);
@@ -1102,7 +1103,6 @@ will-change: transform;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.26);
   cursor:pointer;
   text-decoration: none;
-  margin-top: 40px;
   transition: transform .06s ease, filter .2s ease;
 }
 
@@ -1112,7 +1112,6 @@ will-change: transform;
   transform: scale(1.05);
   color: #001A27;
 }
-
 #para-quem-e .pqe-map__cta a:active{ transform: translateY(0); }
 
 /* ===== Seção: Ofertas e preços ===== */
