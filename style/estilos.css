@@ -804,11 +804,12 @@ will-change: transform;
 }
 #card-flip .flip-cta a:active{ transform: translateY(0); }
 
-/* ===== Prova social ===== */
+/* ===== Seção Professores aprovam — versão Black Friday ===== */
 #prova-social{
-  padding: 30px 15px;
-  background: #FFA857;
-  color: #06202B;
+  padding: 40px 15px 50px;
+  background:
+    radial-gradient(circle at top, #003354 0%, #001321 45%, #000814 100%);
+  color: #E2F1FF; /* cor padrão do texto na seção */
 }
 
 #prova-social .ps-wrap{
@@ -822,19 +823,20 @@ will-change: transform;
   max-width: 700px;
 }
 
+/* Título e subtítulo */
 #prova-social h2{
   margin: 0 0 12px 0;
   font-size: clamp(26px, 2.2vw, 40px);
   line-height: 1.2;
   letter-spacing: .2px;
-  color: #001A27;
+  color: #F9FAFB; /* antes era #001A27 */
 }
 
 #prova-social > .ps-wrap > #texto-prova-social > p{
   margin: 0;
   opacity: .95;
-  color: #001A27;
-  font-size: clamp(16px, 1.4vw, 19px)
+  color: #D8E8FF;  /* texto mais claro no fundo escuro */
+  font-size: clamp(16px, 1.4vw, 19px);
 }
 
 /* Visor (recorta) + trilho (anima) */
@@ -854,11 +856,12 @@ will-change: transform;
   transition: transform .8s ease-in-out;
 }
 
+/* Cada slide */
 #prova-social .ps-slide{
   flex: 0 0 100%;
   padding: 0 20px;
   box-sizing: border-box;
-  color: #003D5C;
+  color: #E2F1FF; /* base do texto do slide */
 }
 
 /* Avatar + legenda */
@@ -870,8 +873,8 @@ will-change: transform;
   height: 130px;
   border-radius: 999px;
   object-fit: cover;
-  box-shadow: 0 8px 22px rgba(0,0,0,.12);
-  border: 4px solid #0074AD;
+  box-shadow: 0 8px 22px rgba(0,0,0,.25);
+  border: 4px solid #FFE86D;   /* borda amarelo destaque */
   margin-bottom: 15px;
 }
 
@@ -882,18 +885,17 @@ will-change: transform;
 
 #prova-social .ps-slide figcaption strong{ 
   font-weight: 800; 
-  color: #001A27;
+  color: #FFE86D;   /* nome com cor de destaque */
 }
 
 /* Quote */
-
 #prova-social blockquote p{
   margin: 6px auto 0;
   max-width: 62ch;
   font-style: italic;
   font-size: 15px;
   line-height: 1.6;
-  color: #003D5C;
+  color: #E2F1FF;
 }
 
 #prova-social .ps-slide blockquote p:last-child{
@@ -901,7 +903,7 @@ will-change: transform;
 }
 
 #prova-social .ps-slide blockquote p{
-  overflow-wrap: anywhere; /* evita overflow se tiver palavra muito longa */
+  overflow-wrap: anywhere;
 }
 
 /* Setas */
@@ -910,22 +912,30 @@ will-change: transform;
   top: 50%;
   transform: translateY(-50%);
   font-size: 50px;
-  color: #0074AD;
-  background: transparent;
+  color: #FFE86D;                    /* setas amarelas */
+  background: rgba(0,0,0,.35);       /* bolinha discreta */
   border: none;
   cursor: pointer;
-  padding: 6px 10px;
+  padding: 4px 10px;
   font-weight: 800;
   user-select: none;
-  transition: color .2s ease;
+  transition: background .2s ease, transform .1s ease;
   line-height: 1;
   z-index: 5;
+  border-radius: 999px;
 }
 
 #prova-social .ps-prev{ left: 16px; }
 #prova-social .ps-next{ right: 16px; }
+
+#prova-social .ps-arrow:hover{
+  transform: translateY(-50%) scale(1.05);
+  background: rgba(0,0,0,.55);
+}
+
 #prova-social .ps-arrow:focus-visible{
-  outline: 3px solid #FFE86D; outline-offset: 2px;
+  outline: 3px solid #FFE86D;
+  outline-offset: 2px;
 }
 
 /* CTA da seção */
@@ -933,14 +943,14 @@ will-change: transform;
   display: block;
   margin: auto;
   width: fit-content;
-  color:#fff;
+  color:#001A27;
   font-weight:700;
   font-size: clamp(14px, 12px + 0.4vw, 18px);
   letter-spacing:.5px;
   padding: 12px 29px;
   border:0;
   border-radius:999px;
-  background:#1b99d8;
+  background:#FFE86D;       /* botão amarelo padrão da LP */
   text-transform:uppercase;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.26);
   cursor:pointer;
@@ -950,15 +960,11 @@ will-change: transform;
 }
 
 #prova-social .ps-cta a:hover{
-  filter: brightness(1.1);
-  background-color: #3FBFFF;
+  filter: brightness(1.05);
   transform: scale(1.05);
   color: #001A27;
 }
 #prova-social .ps-cta a:active{ transform: translateY(0); }
-
-
-
 
 /* ===== Seção: Para quem é ===== */
 #para-quem-e{
