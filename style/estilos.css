@@ -43,221 +43,54 @@ h1,h2,h3,h4{ font-family: var(--font-heading); letter-spacing:.1px; }
   scroll-margin-top: calc(var(--urg-h, 40px));
 } 
 
-/* ===== Cabeçalho / Menu ===== */
-
-body {
-  background: #FFE86D;
-}
-
-.site-header {
-  position: sticky;
-  position: -webkit-sticky;
-  top: -1px;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  transition: box-shadow .25s ease, padding .25s ease;
-  background: #FFE86D; /* faixa amarela padrão */
-}
-
-/* Overlay global de blur (aparece só com o menu aberto) */
-.site-header::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-color: rgba(80, 80, 80, 0.45);
-  backdrop-filter: blur(14px) saturate(1.1);
-  -webkit-backdrop-filter: blur(14px) saturate(1.1);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity .25s ease;
-  z-index: -1; /* fica atrás do conteúdo do header */
-}
-
-/* Header quando a página é rolada */
-.site-header.is-scrolled {
-  background-color: rgba(80, 80, 80, 0.45);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  box-shadow: none;
-}
-
-/* Wrap interno */
-.site-header__wrap {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 10px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  background: transparent;
-}
-
-/* Mesmo rolado continua transparente */
-.site-header.is-scrolled .site-header__wrap {
-  background: transparent;
-}
-
-/* Logo */
-.site-header__logo img {
-  display: block;
-  width: 100px;
-  height: auto;
-  max-height: 100px;
-  transition:
-    max-height .5s ease,
-    opacity .5s ease,
-    transform .5s ease;
-}
-
-/* Some a logo ao rolar */
-.site-header.is-scrolled .site-header__logo img {
-  max-height: 0;
-  opacity: 0;
-  transform: translateY(-10px);
-  pointer-events: none;
-}
-
-/* Botão hambúrguer (mobile) */
-.site-header__toggle {
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 4px;
-  width: 36px;
-  height: 32px;
-  padding: 0 8px;
-  border-radius: 999px;
-  border: 1px solid rgba(0,0,0,.15);
-  background: #ffffff;
-  cursor: pointer;
-}
-
-.site-header__toggle span {
-  display: block;
-  width: 100%;
-  height: 2px;
-  border-radius: 999px;
-  background: #001A27;
-  transition: transform .18s ease, opacity .18s ease;
-}
-
-/* Área do menu (mobile: dropdown) */
-.site-header__nav {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 100%;
-  max-height: 0;
-  overflow: hidden;
-  box-shadow: 0 12px 24px rgba(0,0,0,.35);
-  transition: max-height .25s ease;
-  background: transparent;
-}
-
-.site-header__nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 10px 20px 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.site-header__nav > ul > li > a {
-  display: block;
-  padding: 8px 4px;
-  font-weight: 700;
-  font-size: 1rem;
-  text-decoration: none;
-  color: #001A27;
-  text-transform: uppercase;
-  letter-spacing: .04em;
-  text-align: center;
-}
-
-.site-header__nav > ul > li > a:hover {
-  color: #001A27;
-  scale: 1.05;
-}
-
-.site-header.is-scrolled .site-header__nav > ul > li > a,
-.site-header.is-open .site-header__nav > ul > li > a{
-  color: #FFFFFF;
-}
-
-.site-header:not(.is-scrolled):not(.is-open) .site-header__nav a:hover{
-  color: #0074AD;
-}
-
-.site-header.is-scrolled .site-header__nav > ul > li > a:hover,
-.site-header.is-open .site-header__nav a:hover{
-  color: #FFFFFF;
-  scale: 1.05;
-}
-
-/* Botão diferenciado (CTA) dentro do menu */
-.site-header__nav-cta {
-  margin-top: 4px;
-  padding: 10px 18px;
-  border-radius: 999px;
-  background: #1b99d8;
-  color: #ffffff !important;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: .04em;
-  font-size: 0.88rem;
-  width: fit-content;
-  margin: 12px auto 0 auto;
-  display: block;
-  text-decoration: none;
-  font-weight: 700;
-}
-
-/* ===== Estado: menu aberto ===== */
-.site-header.is-open {
-  background: transparent;          /* tira o amarelo e mostra o blur do ::before */
-  box-shadow: none;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-}
-
-/* Liga o overlay em blur cobrindo a tela toda */
-.site-header.is-open::before {
-  opacity: 1;
-}
-
-/* Garante que o wrap continue transparente com o menu aberto */
-.site-header.is-open .site-header__wrap {
-  background: transparent;
-}
-
-/* Dropdown aberto (altura total); o blur vem do overlay */
-.site-header.is-open .site-header__nav {
-  max-height: 100vh;
-  box-shadow: none;
-  background: transparent;
-  opacity: 1;
-}
-
-/* Animação do ícone hambúrguer virando "X" */
-.site-header.is-open .site-header__toggle span:nth-child(1) {
-  transform: translateY(6px) rotate(45deg);
-}
-.site-header.is-open .site-header__toggle span:nth-child(2) {
-  opacity: 0;
-}
-.site-header.is-open .site-header__toggle span:nth-child(3) {
-  transform: translateY(-6px) rotate(-45deg);
-}
-
 
 /* ===== Seções principais ===== */
+
+/* ===== HERO ===== */
 #hero{
-    background: #FFE86D;  /* leve realce de fundo */
+    /* fundo só em tons escuros/azuis */
+    background:
+      radial-gradient(circle at top, #004d7a 0%, #001A27 45%, #000814 100%);
     padding: 0px 15px 30px 15px;
 }
+
+/* Badge Black Friday: amarelo em cima do fundo escuro */
+#hero.hero--bf .hero-badge{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 16px;
+  margin-bottom: 14px;
+  border-radius: 999px;
+  background: #FFE86D;
+  color: #001A27;
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  text-align: center;
+}
+
+/* Títulos e subtítulo claros, legíveis no fundo escuro */
+#hero.hero--bf h1,
+#hero.hero--bf .hero-sub{
+  color: #F9FAFB;
+}
+
+/* Destaque padrão (ENEM / Academy Cards) em azul da marca */
+#hero.hero--bf .destaque{
+  font-weight: 800;
+  color: #3FBFFF;
+  text-shadow: #000c272a 2px 2px 2px;
+}
+
+/* Destaque do desconto em amarelo */
+#hero .hero-desconto{
+  font-weight: 800;
+  color: #FFE86D;
+  text-shadow: #000c272a 2px 2px 2px;
+}
+
 
 #hero .hero-wrap{
   max-width: 1400px;
@@ -308,14 +141,14 @@ body {
   display: block;
   margin: auto;
   text-align: center;
-  color:#fff;
+  background:#3FBFFF;
+  color:#001A27;
   font-weight:700;
   font-size: clamp(14px, 12px + 0.4vw, 18px);
   letter-spacing:.5px;
   padding: 12px 29px;
   border:0;
   border-radius:999px;
-  background:#1b99d8;
   text-transform:uppercase;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.26);
   cursor:pointer;
@@ -324,11 +157,12 @@ body {
 }
 
 #hero .hero-cta a:hover{
-  filter: brightness(1);
+  filter: brightness(1.2);
   background-color: #3FBFFF;
+  color:#001A27;
   transform: scale(1.05);
-  color: #001A27;
 }
+
 #hero .hero-cta a:active{ transform: translateY(0); }
 
 #hero .hero-imagem{
@@ -336,6 +170,8 @@ body {
   text-align: center;
 }
 
+
+/* ===== Proposta de valor ===== */
 #proposta-valor{
     background: #3FBFFF;  /* leve realce de fundo */
     padding: 30px 15px;
@@ -435,7 +271,7 @@ body {
 }
 #proposta-valor .pv-cta a:active{ transform: translateY(0); }
 
-
+/* ===== Card flip ===== */
 #card-flip{
   padding: 12px 16px 12px;
   background: #3FBFFF;
