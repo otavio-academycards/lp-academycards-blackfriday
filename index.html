@@ -493,9 +493,9 @@
     <section id="oferta" class="ofx ofx--play" aria-labelledby="oferta-title">
         <div class="ofx__wrap">
             <header class="ofx__header">
-                <h2 id="oferta-title">Escolha o plano ideal para você</h2>
+                <h2 id="oferta-title">Promoção Black Friday Academy Cards</h2>
                 <p class="ofx__sub">
-                    Mesma plataforma, mesmo conteúdo completo. O que muda é o tempo de acesso e os bônus exclusivos.
+                    Planos com desconto por tempo limitado. Mesma plataforma, mesmo conteúdo completo — agora com preço especial.
                 </p>
             </header>
 
@@ -507,10 +507,37 @@
                             <span class="plano-card__tag">MENSAL</span>
                         </div>
                         <div class="plano-card__body">
-                            <p class="plano-card__price">
-                                <span class="plano-card__currency">R$</span>73,90
-                                <span class="plano-card__per">/mês</span>
-                            </p>
+                            <!-- Bloco de preço com de/por + selo -->
+                            <div class="plano-card__price-box">
+                                <div class="plano-card__price-col">
+                                    <p class="plano-card__price-old">
+                                        de <span class="plano-card__currency">R$</span>73,90
+                                        <span class="plano-card__per">/mês</span>
+                                    </p>
+                                    <p class="plano-card__price">
+                                        por <span class="plano-card__currency">R$</span>59,90
+                                        <span class="plano-card__per">/mês</span>
+                                    </p>
+                                </div>
+                                <div class="plano-card__off" aria-hidden="true">
+                                    <!-- selo SVG de desconto -->
+                                    <svg class="plano-card__off-tag" viewBox="0 0 90 30">
+                                        <defs>
+                                            <linearGradient id="offGradMensal" x1="0" y1="0" x2="1" y2="1">
+                                                <stop offset="0" stop-color="#FFE86D"/>
+                                                <stop offset="1" stop-color="#FFA858"/>
+                                            </linearGradient>
+                                        </defs>
+                                        <path d="M4 0h74a4 4 0 0 1 4 4v22a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V4a4 4 0 0 1 4-4z"
+                                            fill="url(#offGradMensal)"/>
+                                        <text x="50%" y="55%" text-anchor="middle" dominant-baseline="middle"
+                                            font-size="11" font-weight="700" fill="#001321">
+                                            20% OFF
+                                        </text>
+                                    </svg>
+                                </div>
+                            </div>
+
                             <p class="plano-card__desc">
                                 Ideal para quem quer testar agora e decidir depois. Sem fidelidade.
                             </p>
@@ -524,7 +551,6 @@
                             </ul>
                         </div>
                     </article>
-
                 </article>
 
                 <!-- PLANO SEMESTRAL -->
@@ -534,26 +560,50 @@
                             <span class="plano-card__tag">SEMESTRAL</span>
                         </div>
                         <div class="plano-card__body">
-                            <p class="plano-card__price">
-                                <span class="plano-card__currency">R$</span>52,48
-                                <span class="plano-card__per">/mês</span>
-                            </p>
+                            <div class="plano-card__price-box">
+                                <div class="plano-card__price-col">
+                                    <p class="plano-card__price-old">
+                                        de <span class="plano-card__currency">R$</span>52,48
+                                        <span class="plano-card__per">/mês</span>
+                                    </p>
+                                    <p class="plano-card__price">
+                                        por <span class="plano-card__currency">R$</span>44,90
+                                        <span class="plano-card__per">/mês</span>
+                                    </p>
+                                </div>
+                                <div class="plano-card__off" aria-hidden="true">
+                                    <svg class="plano-card__off-tag" viewBox="0 0 90 30">
+                                        <defs>
+                                            <linearGradient id="offGradSem" x1="0" y1="0" x2="1" y2="1">
+                                                <stop offset="0" stop-color="#FFE86D"/>
+                                                <stop offset="1" stop-color="#FFA858"/>
+                                            </linearGradient>
+                                        </defs>
+                                        <path d="M4 0h74a4 4 0 0 1 4 4v22a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V4a4 4 0 0 1 4-4z"
+                                            fill="url(#offGradSem)"/>
+                                        <text x="50%" y="55%" text-anchor="middle" dominant-baseline="middle"
+                                            font-size="11" font-weight="700" fill="#001321">
+                                            15% OFF
+                                        </text>
+                                    </svg>
+                                </div>
+                            </div>
+
                             <p class="plano-card__desc">
-                                <strong>R$314,88</strong> no semestre (6 meses de acesso).
+                                6 meses de acesso com desconto especial para manter consistência até o meio da sua jornada.
                             </p>
                             <ul class="plano-card__list">
                                 <li>Tudo do plano mensal</li>
-                                <li>Economia de <strong>R$128,52*</strong></li>
+                                <li>Economia em relação ao plano mensal ao longo de 6 meses*</li>
                             </ul>
-                    
-                            <p class="bonus"> <strong>🎁 Bônus exclusivo:</strong></p>
+
+                            <p class="bonus"><strong>🎁 Bônus exclusivo:</strong></p>
                             <ul class="plano-card__list">
                                 <li>Acesso a grupo exclusivo no Telegram</li>
                                 <li>Conteúdos inéditos lançados semanalmente no grupo</li>
                             </ul>
                         </div>
                     </article>
-
                 </article>
 
                 <!-- PLANO ANUAL -->
@@ -564,19 +614,44 @@
                             <span class="plano-card__selo">Melhor custo-benefício</span>
                         </div>
                         <div class="plano-card__body">
-                            <p class="plano-card__price">
-                                <span class="plano-card__currency">R$</span>42,07
-                                <span class="plano-card__per">/mês</span>
-                            </p>
+                            <div class="plano-card__price-box">
+                                <div class="plano-card__price-col">
+                                    <p class="plano-card__price-old">
+                                        de <span class="plano-card__currency">R$</span>42,07
+                                        <span class="plano-card__per">/mês</span>
+                                    </p>
+                                    <p class="plano-card__price">
+                                        por <span class="plano-card__currency">R$</span>34,90
+                                        <span class="plano-card__per">/mês</span>
+                                    </p>
+                                </div>
+                                <div class="plano-card__off" aria-hidden="true">
+                                    <svg class="plano-card__off-tag" viewBox="0 0 100 30">
+                                        <defs>
+                                            <linearGradient id="offGradAnual" x1="0" y1="0" x2="1" y2="1">
+                                                <stop offset="0" stop-color="#FFE86D"/>
+                                                <stop offset="1" stop-color="#FFA858"/>
+                                            </linearGradient>
+                                        </defs>
+                                        <path d="M4 0h84a4 4 0 0 1 4 4v22a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V4a4 4 0 0 1 4-4z"
+                                            fill="url(#offGradAnual)"/>
+                                        <text x="50%" y="55%" text-anchor="middle" dominant-baseline="middle"
+                                            font-size="11" font-weight="700" fill="#001321">
+                                            20% OFF
+                                        </text>
+                                    </svg>
+                                </div>
+                            </div>
+
                             <p class="plano-card__desc">
-                                <strong>R$504,84</strong> no ano (12 meses de acesso).
+                                12 meses de acesso com o maior desconto. Ideal para quem quer se preparar com calma para o ENEM.
                             </p>
                             <ul class="plano-card__list">
                                 <li>Tudo do plano mensal</li>
-                                <li>Economia de <strong>R$381,96*</strong></li>
+                                <li>Economia máxima em relação ao plano mensal ao longo de 12 meses*</li>
                             </ul>
-                    
-                            <p class="bonus"> <strong>🎁 Bônus exclusivo:</strong></p>
+
+                            <p class="bonus"><strong>🎁 Bônus exclusivo:</strong></p>
                             <ul class="plano-card__list">
                                 <li>E-book de redação com +30 temas comentados</li>
                                 <li>Acesso a grupo exclusivo no Telegram</li>
@@ -584,11 +659,10 @@
                             </ul>
                         </div>
                     </article>
-                    
-
                 </article>
             </div>
-            <p class="ofx__btn"><a href="#formularioLP">Quero garantir meu acesso</a></p>
+
+            <p class="ofx__btn"><a href="#formularioLP">Quero garantir meu acesso com desconto</a></p>
         </div>
     </section>
 

@@ -1117,13 +1117,12 @@ will-change: transform;
 /* ===== Seção: Ofertas e preços ===== */
 
 .ofx--play{
-  padding: 30px 15px 30px 15px;
+  padding: 40px 15px 45px;
   background:
-    radial-gradient(1100px 520px at 14% -10%, rgba(63,191,255,.08), transparent 60%),
-    radial-gradient(900px 420px at 110% 6%, rgba(255,232,109,.12), transparent 60%),
-    #FFFFFF;
-  color: #06202B;
-  background-color: #3FBFFF;
+    radial-gradient(1100px 520px at 14% -10%, rgba(255,232,109,.18), transparent 60%),
+    radial-gradient(900px 420px at 110% 6%, rgba(63,191,255,.20), transparent 60%),
+    linear-gradient(145deg, #001321, #001f33 55%, #000814 100%);
+  color: #F9FAFB;
 }
 
 .ofx--play .ofx__wrap{
@@ -1141,18 +1140,20 @@ will-change: transform;
   margin: 0 0 20px 0;
   font-size: clamp(26px, 2.2vw, 40px);
   line-height: 1.12;
+  color: #F9FAFB;              /* antes herdava cor escura */
 }
 
 .ofx--play .ofx__sub{
   margin: 0 0 26px 0;
-  color: #173845;
+  color: #E2F1FF;              /* mais clarinho pro fundo dark */
   font-size: clamp(16px, 1.4vw, 19px);
 }
 
+/* CTA (mantém estilo, só garante contraste no fundo escuro) */
 .ofx--play .ofx__btn a{
   display: block;
   width: fit-content;
-  margin: auto;
+  margin: 40px auto 0;
   color:#001A27;
   font-weight:700;
   font-size: clamp(14px, 12px + 0.4vw, 18px);
@@ -1165,25 +1166,46 @@ will-change: transform;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.26);
   cursor:pointer;
   text-decoration: none;
-  margin-top: 40px;
   transition: transform .06s ease, filter .2s ease;
   text-align: center;
 }
 
 .ofx--play .ofx__btn a:hover{
-  filter: brightness(1.1);
+  filter: brightness(1.05);
   background-color: #FFE86D;
   transform: scale(1.05);
   color: #001A27;
 }
 .ofx--play .ofx__btn a:active{ transform: translateY(0); }
 
-
 .ofx--play .planos-grid{
   display: grid;
   gap: 25px;
-  grid-template-columns: minmax(0, 480px); /* 1 coluna no mobile */
-  justify-content: center;                  /* centraliza o grid */
+  grid-template-columns: minmax(0, 480px);
+  justify-content: center;
+}
+
+/* Selo extra de Black Friday */
+.plano-card--anual::before{
+  content: "BLACK FRIDAY";
+  position: absolute;
+  top: -14px;
+  right: 24px;
+  padding: 4px 10px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #FFE86D, #FF9F3C);
+  color: #001321;
+  box-shadow: 0 4px 10px rgba(0,0,0,.35);
+}
+
+/* Deixa o preço do anual com leve brilho */
+.plano-card--anual .plano-card__price{
+  color: #0B3140;
+  text-shadow: 0 0 12px rgba(255,232,109,.7);
 }
 
 .plano-card__container{
@@ -1258,10 +1280,28 @@ will-change: transform;
   color: #0B3140;
 }
 
-.plano-card__currency{
-  font-size: 0.7em;
-  vertical-align: top;
-  margin-right: 2px;
+/* Bloco de preço com antigo + novo + selo */
+.plano-card__price-box{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 4px 0 12px;
+  flex-wrap: wrap;
+}
+
+.plano-card__price-col{
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.plano-card__price-old{
+  margin: 0;
+  font-size: 0.85rem;
+  color: #355564;
+  opacity: .75;
+  text-decoration: line-through;
 }
 
 .plano-card__per{
@@ -1318,171 +1358,22 @@ will-change: transform;
   background: #FFD13A;
 }
 
-
-/* ===== Seção: FAQ ===== */
-
-#faq.faqx{
-  padding: 30px 15px;
-  background:rgb(255, 168, 87);
-  color: #06202B;
-  border-top: 1px solid rgba(7,35,47,.06);
+/* container do selo de desconto */
+.plano-card__off{
+  flex-shrink: 0;
 }
 
-#faq.faqx .faqx__wrap{
-  max-width: 1400px;
-  margin: auto;
-  padding: 20px 10px 20px;
-}
-
-/* Header */
-#faq.faqx .faqx__header{
-  text-align: center;
-}
-
-#faq.faqx h2{
-  margin: 0 0 12px 0;
-  font-size: clamp(26px, 2.2vw, 40px);
-  line-height: 1.12;
-}
-
-#faq.faqx .faqx__lead{
-  margin: 0 0 16px 0;
-  color: #173845;
-  line-height: 1.55;
-  font-size: clamp(16px, 1.4vw, 19px);
-}
-
-/* Grid de itens (mobile-first) */
-#faq.faqx .faqx__grid{
-  display: grid;
-  gap: 12px;
-  grid-template-columns: 1fr;         /* mobile */
-  max-width: 700px;
-  margin: auto;
-}
-
-/* Item FAQ (details como card de papel) */
-#faq.faqx .faqx__item{
-  background: #ffe7c7;
-  border: 1px solid rgba(7,35,47,.08);
-  border-radius: 16px;
-  box-shadow: 0 8px 22px rgba(0,0,0,.08);
-  padding: 0;                          /* summary controla o padding principal */
-  overflow: clip;
-  transition: border-color .2s ease, box-shadow .2s ease;
-}
-
-/* Summary (linha clicável) */
-#faq.faqx .faqx__item > summary{
-  list-style: none;                     /* remove disclosure padrão */
-  display: grid;
-  grid-template-columns: 1fr auto; /* pergunta | caret */
-  align-items: center;
-  gap: 10px;
-  padding: 14px 14px;
-  cursor: pointer;
-}
-
-#faq.faqx .faqx__item > summary::-webkit-details-marker{
-  display: none;
-}
-
-#faq.faqx .faqx__item h3{
-  margin: 0;
-  font-size: clamp(16px, 2.1vw, 20px);
-  line-height: 1.25;
-  color: #0B3140;
-  font-weight: bold;
-}
-
-/* '+' animado */
-#faq.faqx .toggle-icon{
-  font-size: 22px;
-  width: 28px;               /* mesma largura e altura */
-  height: 28px;
-  display: grid;               /* para centralizar */
-  place-items: center;
-  width: 28px;                 /* mesma largura e altura */
-  height: 28px;
-  line-height: 1;
-  font-weight: 900;
-  color: #0B3140;
-  transform-origin: 50% 50%;
-  transition: transform .4s ease;
-}
-
-#faq.faqx .faqx__item[open] > summary .toggle-icon{
-  transform: rotate(360deg);
-}
-
-/* Conteúdo com animação suave */
-#faq.faqx .faqx__content{
-  overflow: hidden;
-  height: 0;
-  transition: height .7s ease;  /* controla a velocidade */
-}
-
-#faq.faqx .texto-dentro{
-  padding: 0px 14px 15px 14px;
-}
-
-/* padding extra só quando estiver aberto */
-#faq.faqx .faqx__item[open] .faqx__content{
-  height: auto;                 /* deixa ajustar à altura do conteúdo */
-  padding: 0px 14px 0px 14px;
-}
-
-/* texto do conteúdo */
-#faq.faqx p{ margin: 0; color: #173845; line-height: 1.55; }
-#faq.faqx ul{ margin: 0; padding-left: 30px; color: #173845; }
-#faq.faqx li{ line-height: 1.5; }
-
-/* Hover/foco acessível */
-#faq.faqx .faqx__item:focus-within{
-  outline: 3px solid #FFE86D;
-  outline-offset: 2px;
-}
-
-#faq.faqx .faqx__item > summary:focus-visible{
-  outline: 3px solid #FFE86D;
-  outline-offset: 2px;
-}
-
-#faq.faqx .faqx__item:hover{
-  box-shadow: 0 12px 28px rgba(0,0,0,.10);
-}
-
-/* CTA final */
-#faq.faqx .faqx__cta a{
+/* SVG do selo */
+.plano-card__off-tag{
   display: block;
-  width: fit-content;
-  margin: auto;
-  color:#fff;
-  font-weight:700;
-  font-size: clamp(14px, 12px + 0.4vw, 18px);
-  letter-spacing:.5px;
-  padding: 12px 29px;
-  border:0;
-  border-radius:999px;
-  background:#1b99d8;
-  text-transform:uppercase;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.26);
-  cursor:pointer;
-  transition: transform .06s ease, filter .2s ease;
-  text-decoration: none;
-  margin-top: 40px;
-  text-align: center;
+  width: 88px;
+  height: auto;
 }
 
-#faq.faqx .faqx__cta a:hover{
-  filter: brightness(1.1);
-  background-color: #3FBFFF;
-  transform: scale(1.05);
-  color: #001A27;
+/* opcional: deixa o anual um pouco mais “aceso” */
+.plano-card--anual .plano-card__price{
+  text-shadow: 0 0 14px rgba(255,232,109,.65);
 }
-
-#faq.faqx .faqx__cta a:active{ transform: translateY(0); }
-
 
 /* ===== Seção: Formulário ===== */
 .formx{
@@ -1749,6 +1640,174 @@ will-change: transform;
 .garantia-card__list li + li{
   margin-top: 2px;
 }
+/* ===== Seção: FAQ ===== */
+
+#faq.faqx{
+  padding: 30px 15px;
+  background:rgb(255, 168, 87);
+  color: #06202B;
+  border-top: 1px solid rgba(7,35,47,.06);
+}
+
+#faq.faqx .faqx__wrap{
+  max-width: 1400px;
+  margin: auto;
+  padding: 20px 10px 20px;
+}
+
+/* Header */
+#faq.faqx .faqx__header{
+  text-align: center;
+}
+
+#faq.faqx h2{
+  margin: 0 0 12px 0;
+  font-size: clamp(26px, 2.2vw, 40px);
+  line-height: 1.12;
+}
+
+#faq.faqx .faqx__lead{
+  margin: 0 0 16px 0;
+  color: #173845;
+  line-height: 1.55;
+  font-size: clamp(16px, 1.4vw, 19px);
+}
+
+/* Grid de itens (mobile-first) */
+#faq.faqx .faqx__grid{
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 1fr;         /* mobile */
+  max-width: 700px;
+  margin: auto;
+}
+
+/* Item FAQ (details como card de papel) */
+#faq.faqx .faqx__item{
+  background: #ffe7c7;
+  border: 1px solid rgba(7,35,47,.08);
+  border-radius: 16px;
+  box-shadow: 0 8px 22px rgba(0,0,0,.08);
+  padding: 0;                          /* summary controla o padding principal */
+  overflow: clip;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+/* Summary (linha clicável) */
+#faq.faqx .faqx__item > summary{
+  list-style: none;                     /* remove disclosure padrão */
+  display: grid;
+  grid-template-columns: 1fr auto; /* pergunta | caret */
+  align-items: center;
+  gap: 10px;
+  padding: 14px 14px;
+  cursor: pointer;
+}
+
+#faq.faqx .faqx__item > summary::-webkit-details-marker{
+  display: none;
+}
+
+#faq.faqx .faqx__item h3{
+  margin: 0;
+  font-size: clamp(16px, 2.1vw, 20px);
+  line-height: 1.25;
+  color: #0B3140;
+  font-weight: bold;
+}
+
+/* '+' animado */
+#faq.faqx .toggle-icon{
+  font-size: 22px;
+  width: 28px;               /* mesma largura e altura */
+  height: 28px;
+  display: grid;               /* para centralizar */
+  place-items: center;
+  width: 28px;                 /* mesma largura e altura */
+  height: 28px;
+  line-height: 1;
+  font-weight: 900;
+  color: #0B3140;
+  transform-origin: 50% 50%;
+  transition: transform .4s ease;
+}
+
+#faq.faqx .faqx__item[open] > summary .toggle-icon{
+  transform: rotate(360deg);
+}
+
+/* Conteúdo com animação suave */
+#faq.faqx .faqx__content{
+  overflow: hidden;
+  height: 0;
+  transition: height .7s ease;  /* controla a velocidade */
+}
+
+#faq.faqx .texto-dentro{
+  padding: 0px 14px 15px 14px;
+}
+
+/* padding extra só quando estiver aberto */
+#faq.faqx .faqx__item[open] .faqx__content{
+  height: auto;                 /* deixa ajustar à altura do conteúdo */
+  padding: 0px 14px 0px 14px;
+}
+
+/* texto do conteúdo */
+#faq.faqx p{ margin: 0; color: #173845; line-height: 1.55; }
+#faq.faqx ul{ margin: 0; padding-left: 30px; color: #173845; }
+#faq.faqx li{ line-height: 1.5; }
+
+/* Hover/foco acessível */
+#faq.faqx .faqx__item:focus-within{
+  outline: 3px solid #FFE86D;
+  outline-offset: 2px;
+}
+
+#faq.faqx .faqx__item > summary:focus-visible{
+  outline: 3px solid #FFE86D;
+  outline-offset: 2px;
+}
+
+#faq.faqx .faqx__item:hover{
+  box-shadow: 0 12px 28px rgba(0,0,0,.10);
+}
+
+/* CTA final */
+#faq.faqx .faqx__cta a{
+  display: block;
+  width: fit-content;
+  margin: auto;
+  color:#fff;
+  font-weight:700;
+  font-size: clamp(14px, 12px + 0.4vw, 18px);
+  letter-spacing:.5px;
+  padding: 12px 29px;
+  border:0;
+  border-radius:999px;
+  background:#1b99d8;
+  text-transform:uppercase;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.26);
+  cursor:pointer;
+  transition: transform .06s ease, filter .2s ease;
+  text-decoration: none;
+  margin-top: 40px;
+  text-align: center;
+}
+
+#faq.faqx .faqx__cta a:hover{
+  filter: brightness(1.1);
+  background-color: #3FBFFF;
+  transform: scale(1.05);
+  color: #001A27;
+}
+
+#faq.faqx .faqx__cta a:active{ transform: translateY(0); }
+
+
+
+
+
 
 /* ===== Footer ===== */
 section.footer-content {
