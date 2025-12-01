@@ -172,9 +172,12 @@ h1,h2,h3,h4{ font-family: var(--font-heading); letter-spacing:.1px; }
 
 
 /* ===== Proposta de valor ===== */
+/* 2) Proposta de Valor — ajuste Black Friday, bem sutil */
 #proposta-valor{
-    background: #3FBFFF;  /* leve realce de fundo */
-    padding: 30px 15px;
+  /* antes era um azul chapado (#3FBFFF) */
+  background:
+    radial-gradient(circle at top, #003354 0%, #001321 45%, #000814 100%);
+  padding: 35px 15px;
 }
 
 #proposta-valor .provas-wrap{
@@ -184,7 +187,7 @@ h1,h2,h3,h4{ font-family: var(--font-heading); letter-spacing:.1px; }
   flex-flow: column nowrap;
   gap: clamp(20px, 0.8vw, 40px);
   align-items: center;
-  color: #001A27;
+  color: #F9FAFB;              /* texto padrão um pouco mais claro */
   padding: 20px 40px 20px;
 }
 
@@ -193,22 +196,24 @@ h1,h2,h3,h4{ font-family: var(--font-heading); letter-spacing:.1px; }
   font-size: clamp(26px, 2.2vw, 40px);
   line-height: 1.2;
   letter-spacing: .2px;
-  color: #001A27;
+  color: #F9FAFB;              /* título branco pra contrastar com o fundo escuro */
   text-align: center;
 }
 
 #proposta-valor .pv-grid{
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));  gap: 25px;
-  align-items: stretch;      /* garante que os itens preencham a linha */
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+  align-items: stretch;
   padding-bottom: 25px;
 }
 
+/* Mantém os cards clarinhos, só reforça a sombra pra destacar no fundo escuro */
 #proposta-valor .valores-wrap{
   background: #FFE7C7;
   border-radius: 15px;
   padding: 25px;
-  box-shadow: 0 8px 22px rgba(0,0,0,.08);
+  box-shadow: 0 10px 26px rgba(0,0,0,.25);
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -227,7 +232,7 @@ h1,h2,h3,h4{ font-family: var(--font-heading); letter-spacing:.1px; }
   width: 100%;
 }
 
-.valores-item img{
+#proposta-valor .valores-item img{
   width: 55px;
   height: auto;
 }
@@ -235,7 +240,7 @@ h1,h2,h3,h4{ font-family: var(--font-heading); letter-spacing:.1px; }
 #proposta-valor .pv-grid h3{
   font-size: clamp(18px, 2.1vw, 22px);
   line-height: 1.2;
-  color: #001A27;
+  color: #001A27;              /* mantém o texto escuro dentro do card claro */
 }
 
 #proposta-valor .pv-grid p{
@@ -244,6 +249,7 @@ h1,h2,h3,h4{ font-family: var(--font-heading); letter-spacing:.1px; }
   color: #001A27;
 }
 
+/* CTA agora segue o mesmo estilo do botão principal do hero */
 #proposta-valor .pv-cta a{
   display: block;
   margin: auto;
@@ -254,22 +260,412 @@ h1,h2,h3,h4{ font-family: var(--font-heading); letter-spacing:.1px; }
   padding: 12px 29px;
   border:0;
   border-radius:999px;
-  background:#FFA857;
+  background:#3FBFFF;
   text-align: center;
   text-transform:uppercase;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.26);
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.35);
   cursor:pointer;
   transition: transform .06s ease, filter .2s ease;
   text-decoration: none;
 }
 
 #proposta-valor .pv-cta a:hover{
-  filter: brightness(1.1);
-  background-color: #ffa857;
+  filter: brightness(1.05);
+  background-color: #3FBFFF;
   transform: scale(1.05);
   color: #001A27;
 }
 #proposta-valor .pv-cta a:active{ transform: translateY(0); }
+
+/* ===== Metodologia ===== */
+/* ===== Metodologia — ajuste Black Friday ===== */
+#metodologia{
+  padding: 40px 15px;
+  background:
+    radial-gradient(circle at top, #003354 0%, #001321 45%, #000814 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+#metodologia .met-wrap{
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px 40px 10px;
+}
+
+#metodologia .met-header{
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+#metodologia h2{
+  margin: 0 0 12px 0;
+  font-size: clamp(26px, 2.2vw, 40px);
+  line-height: 1.2;
+  letter-spacing: .2px;
+  color: #F9FAFB;              /* título claro */
+}
+
+#metodologia .met-sub{
+  margin: 20px auto 0;
+  font-size: clamp(16px, 1.4vw, 19px);
+  line-height: 1.45;
+  color: #E2F1FF;              /* subtítulo mais suave */
+  max-width: 65ch;
+}
+
+#metodologia .met-emoji{
+  font-size: .9em;
+  margin-right: 6px;
+}
+
+#metodologia .scribble{
+  position: relative;
+  display: inline-block;
+}
+
+/* mantém o rabisco, só em cima do fundo escuro */
+#metodologia .scribble::after{
+  content: "";
+  position: absolute;
+  left:-3px; right:-30px; bottom:-10px; height:13px;
+  background:
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="220" height="14" viewBox="0 0 220 14"><path d="M2 10 Q 40 2 80 10 T 160 10 T 218 10" fill="none" stroke="%23FFE86D" stroke-width="4" stroke-linecap="round"/></svg>')
+    no-repeat center/100% 100%;
+  opacity:.95;
+}
+
+#metodologia .met-wrap .pqf__wrap {
+  position: relative;
+}
+
+/* GRID dos pilares */
+.pqf__grid{
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr;
+  max-width: 70vw;
+  margin: 0 auto;
+}
+
+#met-cientifica{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Cartinhas (mantidas, só reforça a sombra pro fundo escuro) */
+.pqf__card{
+  position: relative;
+  margin: auto;
+  max-width: 500px;
+  background: #F7FCFF;
+  border: 2px solid rgba(7,35,47,.10);
+  border-radius: 16px;
+  padding: 80px 30px 30px 30px;
+  box-shadow:
+    0 14px 30px rgba(0,0,0,.30),
+    0 0 0 6px rgba(255,255,255,.55) inset;
+  transform: rotate(var(--tilt, 0deg));
+  transition: transform .15s ease, box-shadow .2s ease;
+  display: block;
+  height: 100%;
+}
+
+.pqf__card:hover{
+  transform: rotate(calc(var(--tilt, 0deg) * .6)) translateY(-2px);
+  box-shadow:
+    0 18px 36px rgba(0,0,0,.34),
+    0 0 0 6px rgba(255,255,255,.70) inset;
+}
+
+/* inclinação leve alternada */
+.pqf__card:nth-child(1){ --tilt: -1.2deg; }
+.pqf__card:nth-child(2){ --tilt:  .9deg; }
+.pqf__card:nth-child(3){ --tilt: -0.6deg; }
+.pqf__card:nth-child(4){ --tilt:  1.1deg; }
+
+/* “Sticker”/ícone decorativo */
+.pqf__card::before{
+  content: "✓";
+  position: absolute;
+  left: 50%;
+  top: 12px;
+  width: 44px; height: 44px;
+  transform: translateX(-50%);
+  border-radius: 12px;
+  display: grid; place-items: center;
+  background: linear-gradient(180deg, #ffc272, #FFE7C7);
+  border: 2px solid #3FBFFF;
+  box-shadow: 0 6px 16px rgba(63,191,255,.22);
+  font-weight: 900; color: #07232F;
+  font-size: 18px;
+}
+
+.pqf__card:nth-child(1)::before{ content: "⏱️"; }
+.pqf__card:nth-child(2)::before{ content: "🧠"; }
+.pqf__card:nth-child(3)::before{ content: "🔀"; }
+.pqf__card:nth-child(4)::before{ content: "📈"; }
+
+.pqf__card h3{
+  margin: 2px 0 6px 0;
+  font-size: clamp(16px, 2.1vw, 20px);
+  line-height: 1.25;
+  color: #0B3140;
+  font-weight: 900;
+}
+
+.pqf__why{
+  margin: 0 0 10px 0;
+  color: #173845;
+  line-height: 1.5;
+}
+
+/* ===== Como funciona ===== */
+#como-funciona{
+  padding: 40px 15px 50px;
+  background:
+    radial-gradient(circle at top, #003354 0%, #001321 45%, #000814 100%);
+  /* já tinha overflow: hidden lá embaixo, mantemos a ideia aqui também */
+  position: relative;
+  overflow: hidden;
+}
+
+#como-funciona .cf-wrap{
+  max-width:1400px;
+  margin:0 auto;
+  position:relative;
+  padding: 20px 40px 20px;  
+}
+
+/* ====== Cabeçalho ====== */
+#como-funciona h2{
+  font-size: clamp(26px, 2.2vw, 40px);
+  line-height:1.1;
+  color:#F9FAFB;              /* antes era #001A27 */
+  margin: 0 0 12px 0;
+  text-align: center;
+}
+
+#como-funciona .cf-sub{
+  color:#E2F1FF;              /* antes era #001A27 */
+  font-size: clamp(16px, 1.4vw, 19px);
+  text-align: center;
+}
+
+/* ====== Trilha MOBILE (grossa) ====== */
+
+/* ====== Passos (markup único) ====== */
+#como-funciona .cf-steps{
+  margin:30px auto 0;
+  display:flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  gap:40px;
+  position:relative;
+  z-index:2;
+  list-style: none;
+}
+
+#como-funciona .cf-step{
+  background-color: #ffffff;
+  border: 1px solid #E6F2FA;
+  border-radius: 18px;
+  padding: 20px;
+  max-width: 440px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 14px 30px rgba(0,0,0,.26); /* novo: só pra flutuar no fundo escuro */
+}
+
+#como-funciona #cf-left {
+  transform: translateX(4vw);
+}
+
+#como-funciona #cf-right {
+  transform: translateX(-4vw);
+}
+
+#como-funciona .texto-passos{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#cf-left::before,
+#cf-right::before{
+  content: "";
+  position: absolute;
+  top: 24px;
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  z-index: 3;
+  background: #fff;
+  box-shadow: 0 0 0 6px rgba(63,191,255,.15), inset 0 0 0 4px #3FBFFF;
+}
+
+#cf-left::before{ left: -22px; }
+#cf-right::before{ right: -22px; }
+
+#como-funciona .header-cf-step{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+#como-funciona .cf-kicker{
+  display: inline-grid;
+  grid-auto-flow: column;
+  gap: 8px;
+  align-items: center;
+  font-weight: 800;
+  font-size: 18px;
+  color: #073b57;
+  letter-spacing: .3px;
+  background: #E7F7FF;  
+  border: 1px dashed #3FBFFF;
+  border-radius: 999px;
+  padding: 6px 10px;
+  margin-bottom: 6px;
+}
+
+#como-funciona .cf-dot{
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #3FBFFF, #FFE86D);
+  box-shadow: 0 0 0 2px rgba(63,191,255,.25);
+}
+
+#como-funciona .cf-icon{
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 12px;
+  background: #fff;
+  border: 1px solid #dff3ff; 
+  box-shadow: inset 0 0 0 2px rgba(63,191,255,.15);
+}
+
+#como-funciona .cf-title{
+  font-size: clamp(18px, 2.1vw, 22px);
+  line-height: 1.2;
+  color: #001A27;
+}
+
+#como-funciona .cf-text{
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.45;
+  color: #0B3140;
+}
+
+#como-funciona{ overflow:hidden; }
+#como-funciona .cf-wrap{ position:relative; overflow:hidden; }
+
+
+/* === TRILHA — PATCH (adicione ao final do seu CSS) === */
+#como-funciona{
+/* variáveis de ajuste fino (mude aqui para alinhar início/fim) */
+--trail-top: 150px; /* move a caixa da SVG para cima/baixo */
+--trail-bottom: -60px; /* aumenta a área até o rodapé da seção */
+--trail-left: 55px; /* desloca a SVG na horizontal */
+--trail-x: 0px; /* translate interno da curva (eixo X) */
+--trail-y: -20px; /* translate interno da curva (eixo Y) */
+--trail-scale-x: 1; /* estica/encolhe a curva em X */
+--trail-scale-y: 1.25; /* estica/encolhe a curva em Y */
+
+--trail-rotate: 7deg; /* mobile */
+--trail-desktop-rotate: 0deg; /* desktop */
+
+/* desktop (S-curve) */
+--trail-desktop-x: 0px;
+--trail-desktop-y: 0px;
+--trail-desktop-scale: 1;
+
+
+/* se ainda não tiver */
+overflow: hidden; /* impede a trilha de vazar para fora da seção */
+}
+
+/* ——— Trilha MOBILE (SVG) ——— */
+#como-funciona .cf-trail-mobile{
+position:absolute;
+left: var(--trail-left); right: 0;
+top: var(--trail-top); bottom: var(--trail-bottom);
+z-index:1; pointer-events:none; display:block; overflow: visible;
+transform: translate(var(--trail-x, 0px), var(--trail-y, 0px))
+scale(var(--trail-scale-x, 1), var(--trail-scale-y, 1))
+rotate(var(--trail-rotate));
+transform-origin: 50% 0%; /* pivota pelo topo central; mude p/ left top se preferir */
+will-change: transform;
+}
+#como-funciona .cf-trail-base{
+fill:none; stroke: #FFE86D; stroke-width: 44;
+stroke-linecap:round; stroke-linejoin:round;
+}
+#como-funciona .cf-trail-core{
+fill:none; stroke:#3FBFFF; stroke-width:22;
+stroke-linecap:round; stroke-linejoin:round;
+filter: drop-shadow(0 4px 16px rgba(63,191,255,.25));
+}
+#como-funciona #cf-arrow-fat path{ fill:#3FBFFF; }
+
+/* ——— Trilha DESKTOP (S-curve ao fundo) ——— */
+#como-funciona .cf-trail-desktop{
+position:absolute; inset:0; z-index:1; pointer-events:none; display:none;
+transform: translate(var(--trail-desktop-x, 0px), var(--trail-desktop-y, 0px))
+scale(var(--trail-desktop-scale, 1))
+rotate(var(--trail-desktop-rotate));
+transform-origin: 50% 50%;
+will-change: transform;
+}
+
+#como-funciona .cf-s-outer{ fill:none; stroke:#FFE86D; stroke-width:14; stroke-linecap:round; }
+#como-funciona .cf-s-inner{ fill:none; stroke:#3FBFFF; stroke-width:8; stroke-linecap:round; }
+#como-funciona #cf-arrow-head path{ fill:#3FBFFF; }
+
+
+#como-funciona .cf-trail-base,
+#como-funciona .cf-trail-core{
+  vector-effect: non-scaling-stroke; /* impede engrossar/afinar com escalas */
+}
+
+/* CTA da seção */
+#como-funciona .cf-cta a{
+  display: block;
+  width: fit-content;
+  margin: auto;
+  color:#fff;
+  font-weight:700;
+  font-size: clamp(14px, 12px + 0.4vw, 18px);
+  letter-spacing:.5px;
+  padding: 12px 29px;
+  border:0;
+  border-radius:999px;
+  background:#1b99d8;
+  text-transform:uppercase;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.26);
+  cursor:pointer;
+  text-decoration: none;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  transition: transform .06s ease, filter .2s ease;
+}
+
+#como-funciona .cf-cta a:hover{
+  filter: brightness(1);
+  background-color: #3FBFFF;
+  transform: scale(1.05);
+  color: #001A27;
+}
+#como-funciona .cf-cta a:active{ transform: translateY(0); }
 
 /* ===== Card flip ===== */
 #card-flip{
@@ -558,394 +954,8 @@ h1,h2,h3,h4{ font-family: var(--font-heading); letter-spacing:.1px; }
 }
 #prova-social .ps-cta a:active{ transform: translateY(0); }
 
-#como-funciona{
-  padding: 0 15px 30px 15px;
-  background: #FFE86D;  /* leve realce de fundo */
-}
-
-#como-funciona .cf-wrap{
-  max-width:1400px;
-  margin:0 auto;
-  position:relative;
-  padding: 20px 40px 20px;  
-}
-
-/* ====== Cabeçalho ====== */
-#como-funciona h2{
-  font-size: clamp(26px, 2.2vw, 40px);
-  line-height:1.1;
-  color:#001A27;
-  margin:0 0 6px;
-  text-align: center;
-  margin: 0 0 12px 0;
-}
-
-#como-funciona .cf-sub{
-  color:#001A27;
-  font-size: clamp(16px, 1.4vw, 19px);
-  text-align: center;
-}
-
-/* ====== Trilha MOBILE (grossa) ====== */
-
-/* ====== Passos (markup único) ====== */
-#como-funciona .cf-steps{
-  margin:30px auto 0;
-  display:flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  gap:40px;                    /* espaço entre passos */
-  position:relative;
-  z-index:2;
-  list-style: none;
-}
-
-#como-funciona .cf-step{
-  background-color: #fff;
-  border: 1px solid #E6F2FA;
-  border-radius: 18px;
-  padding: 20px;
-  max-width: 440px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#como-funciona #cf-left {
-  transform: translateX(4vw);
-}
-
-#como-funciona #cf-right {
-  transform: translateX(-4vw);
-}
-
-#como-funciona .texto-passos{
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-#cf-left::before,
-#cf-right::before{
-  content: "";
-  position: absolute;
-  top: 24px;
-  width: 18px;
-  height: 18px;
-  border-radius: 999px;
-  z-index: 3;
-  background: #fff;
-  box-shadow: 0 0 0 6px rgba(63,191,255,.15), inset 0 0 0 4px #3FBFFF;
-}
-
-#cf-left::before{ left: -22px; }
-#cf-right::before{ right: -22px; }
-
-#como-funciona .header-cf-step{
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  justify-content: space-between;
-}
-
-#como-funciona .cf-kicker{
-  display: inline-grid;
-  grid-auto-flow: column;
-  gap: 8px;
-  align-items: center;
-  font-weight: 800;
-  font-size: 18px;
-  color: #073b57;
-  letter-spacing: .3px;
-  background: #E7F7FF;  
-  border: 1px dashed #3FBFFF;
-  border-radius: 999px;
-  padding: 6px 10px;
-  margin-bottom: 6px;
-}
-
-#como-funciona .cf-dot{
-  width: 12px;
-  height: 12px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, #3FBFFF, #FFE86D);
-  box-shadow: 0 0 0 2px rgba(63,191,255,.25);
-}
-
-#como-funciona .cf-icon{
-  width: 48px;
-  height: 48px;
-  border-radius: 14px;
-  display: grid;
-  place-items: center;
-  margin-bottom: 12px;
-  background: #fff;
-  border: 1px solid #dff3ff; 
-  box-shadow: inset 0 0 0 2px rgba(63,191,255,.15);
-}
-
-#como-funciona .cf-title{
-  font-size: clamp(18px, 2.1vw, 22px);
-  line-height: 1.2;
-  color: #001A27;
-}
-
-#como-funciona .cf-text{
-  margin: 0;
-  font-size: 15px;
-  line-height: 1.45;
-  color: #0B3140;
-}
-
-#como-funciona{ overflow:hidden; }
-#como-funciona .cf-wrap{ position:relative; overflow:hidden; }
 
 
-/* === TRILHA — PATCH (adicione ao final do seu CSS) === */
-#como-funciona{
-/* variáveis de ajuste fino (mude aqui para alinhar início/fim) */
---trail-top: 150px; /* move a caixa da SVG para cima/baixo */
---trail-bottom: -60px; /* aumenta a área até o rodapé da seção */
---trail-left: 55px; /* desloca a SVG na horizontal */
---trail-x: 0px; /* translate interno da curva (eixo X) */
---trail-y: -20px; /* translate interno da curva (eixo Y) */
---trail-scale-x: 1; /* estica/encolhe a curva em X */
---trail-scale-y: 1.25; /* estica/encolhe a curva em Y */
-
---trail-rotate: 7deg; /* mobile */
---trail-desktop-rotate: 0deg; /* desktop */
-
-/* desktop (S-curve) */
---trail-desktop-x: 0px;
---trail-desktop-y: 0px;
---trail-desktop-scale: 1;
-
-
-/* se ainda não tiver */
-overflow: hidden; /* impede a trilha de vazar para fora da seção */
-}
-
-/* ——— Trilha MOBILE (SVG) ——— */
-#como-funciona .cf-trail-mobile{
-position:absolute;
-left: var(--trail-left); right: 0;
-top: var(--trail-top); bottom: var(--trail-bottom);
-z-index:1; pointer-events:none; display:block; overflow: visible;
-transform: translate(var(--trail-x, 0px), var(--trail-y, 0px))
-scale(var(--trail-scale-x, 1), var(--trail-scale-y, 1))
-rotate(var(--trail-rotate));
-transform-origin: 50% 0%; /* pivota pelo topo central; mude p/ left top se preferir */
-will-change: transform;
-}
-#como-funciona .cf-trail-base{
-fill:none; stroke: rgba(255,232,109,.35); stroke-width: 44;
-stroke-linecap:round; stroke-linejoin:round;
-}
-#como-funciona .cf-trail-core{
-fill:none; stroke:#3FBFFF; stroke-width:22;
-stroke-linecap:round; stroke-linejoin:round;
-filter: drop-shadow(0 4px 16px rgba(63,191,255,.25));
-}
-#como-funciona #cf-arrow-fat path{ fill:#3FBFFF; }
-
-/* ——— Trilha DESKTOP (S-curve ao fundo) ——— */
-#como-funciona .cf-trail-desktop{
-position:absolute; inset:0; z-index:1; pointer-events:none; display:none;
-transform: translate(var(--trail-desktop-x, 0px), var(--trail-desktop-y, 0px))
-scale(var(--trail-desktop-scale, 1))
-rotate(var(--trail-desktop-rotate));
-transform-origin: 50% 50%;
-will-change: transform;
-}
-
-#como-funciona .cf-s-outer{ fill:none; stroke:rgba(255,232,109,.35); stroke-width:14; stroke-linecap:round; }
-#como-funciona .cf-s-inner{ fill:none; stroke:#3FBFFF; stroke-width:8; stroke-linecap:round; }
-#como-funciona #cf-arrow-head path{ fill:#3FBFFF; }
-
-
-#como-funciona .cf-trail-base,
-#como-funciona .cf-trail-core{
-  vector-effect: non-scaling-stroke; /* impede engrossar/afinar com escalas */
-}
-
-/* CTA da seção */
-#como-funciona .cf-cta a{
-  display: block;
-  width: fit-content;
-  margin: auto;
-  color:#fff;
-  font-weight:700;
-  font-size: clamp(14px, 12px + 0.4vw, 18px);
-  letter-spacing:.5px;
-  padding: 12px 29px;
-  border:0;
-  border-radius:999px;
-  background:#1b99d8;
-  text-transform:uppercase;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.26);
-  cursor:pointer;
-  text-decoration: none;
-  margin-top: 40px;
-  margin-bottom: 20px;
-  transition: transform .06s ease, filter .2s ease;
-}
-
-#como-funciona .cf-cta a:hover{
-  filter: brightness(1);
-  background-color: #3FBFFF;
-  transform: scale(1.05);
-  color: #001A27;
-}
-#como-funciona .cf-cta a:active{ transform: translateY(0); }
-
-#metodologia{
-  padding: 30px 15px;
-  background: #FFE86D;  /* leve realce de fundo */
-  position: relative;
-  overflow: hidden;
-}
-
-#metodologia .met-wrap{
-  max-width: 1400px;
-  margin: 0 auto;
-  text-align: center;
-  padding: 20px 40px 20px;  
-}
-
-#metodologia .met-header{
-  margin-bottom: 25px;
-  text-align: center;
-}
-
-#metodologia h2{
-  margin: 0 0 12px 0;
-  font-size: clamp(26px, 2.2vw, 40px);
-  line-height: 1.2;
-  letter-spacing: .2px;
-  color: #001A27;
-}
-
-#metodologia .met-sub{
-  margin: 0;
-  font-size: clamp(16px, 1.4vw, 19px);
-  line-height: 1.45;
-  color: #0B3140;
-  max-width: 65ch;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 20px;
-}
-
-#metodologia .met-emoji{
-  font-size: .9em;
-  margin-right: 6px;
-}
-
-#metodologia .scribble{
-  position: relative;
-  display: inline-block;
-}
-
-#metodologia .scribble::after{
-  content: "";
-  position: absolute;
-  left:-3px; right:-30px; bottom:-10px; height:13px;
-  background:
-    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="220" height="14" viewBox="0 0 220 14"><path d="M2 10 Q 40 2 80 10 T 160 10 T 218 10" fill="none" stroke="%23FFA858" stroke-width="4" stroke-linecap="round"/></svg>')
-    no-repeat center/100% 100%;
-  opacity:.9;
-}
-
-#metodologia .met-wrap .pqf__wrap {
-  position: relative;
-}
-
-/* Título e lead */
-.pqf__wrap > h2{
-  margin: 0 0 12px 0;
-  font-size: clamp(26px, 2.2vw, 40px);
-  line-height: 1.12;
-}
-
-/* GRID dos pilares (mobile-first) */
-.pqf__grid{
-  display: grid;
-  gap: 16px;
-  grid-template-columns: 1fr;            /* 1 por linha no mobile */
-  max-width: 70vw;
-  margin: 0 auto;
-}
-
-#met-cientifica{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Cartinhas (cards) */
-.pqf__card{
-  position: relative;                     /* para o sticker */
-  margin: auto;
-  max-width: 500px;
-  background: #F7FCFF;
-  border: 2px solid rgba(7,35,47,.10);
-  border-radius: 16px;
-  padding: 80px 30px 30px 30px;    /* reserva no topo pro ícone */
-  box-shadow:
-    0 12px 28px rgba(0,0,0,.12),
-    0 0 0 6px rgba(255,255,255,.62) inset; /* textura de papel */
-  transform: rotate(var(--tilt, 0deg));
-  transition: transform .15s ease, box-shadow .2s ease;
-  display: block;
-  height: 100%;
-}
-
-.pqf__card:hover{
-  transform: rotate(calc(var(--tilt, 0deg) * .6)) translateY(-2px);
-  box-shadow: 0 16px 34px rgba(0,0,0,.14), 0 0 0 6px rgba(255,255,255,.70) inset;
-}
-/* inclinação leve alternada */
-.pqf__card:nth-child(1){ --tilt: -1.2deg; }
-.pqf__card:nth-child(2){ --tilt:  .9deg; }
-.pqf__card:nth-child(3){ --tilt: -0.6deg; }
-.pqf__card:nth-child(4){ --tilt:  1.1deg; }
-
-/* “Sticker”/ícone decorativo (lúdico) */
-.pqf__card::before{
-  content: "✓";                             /* fallback */
-  position: absolute;
-  left: 50%;
-  top: 12px;
-  width: 44px; height: 44px;
-  transform: translateX(-50%);
-  border-radius: 12px;
-  display: grid; place-items: center;
-  background: linear-gradient(180deg, #ffc272, #FFE7C7);
-  border: 2px solid #3FBFFF;
-  box-shadow: 0 6px 16px rgba(63,191,255,.22);
-  font-weight: 900; color: #07232F;
-  font-size: 18px;
-}
-
-/* Emojis por pilar (pode trocar por imagens via background-image) */
-.pqf__card:nth-child(1)::before{content: "⏱️"; }
-.pqf__card:nth-child(2)::before{ content: "🧠"; }
-.pqf__card:nth-child(3)::before{ content: "🔀"; }
-.pqf__card:nth-child(4)::before{ content: "📈"; }
-
-/* Títulos e textos internos */
-.pqf__card h3{
-  margin: 2px 0 6px 0;
-  font-size: clamp(16px, 2.1vw, 20px);
-  line-height: 1.25;
-  color: #0B3140;
-  font-weight: 900;
-}
-.pqf__why{
-  margin: 0 0 10px 0;
-  color: #173845;
-  line-height: 1.5;
-}
 
 /* ===== Seção: Para quem é ===== */
 #para-quem-e{
