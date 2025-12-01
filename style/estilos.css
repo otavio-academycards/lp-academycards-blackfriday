@@ -668,10 +668,11 @@ will-change: transform;
 #como-funciona .cf-cta a:active{ transform: translateY(0); }
 
 /* ===== Card flip ===== */
+/* ===== Exemplo de carta (flip) — versão Black Friday ===== */
 #card-flip{
-  padding: 12px 16px 12px;
-  background: #3FBFFF;
-  padding: 30px 15px;
+  padding: 40px 15px 50px;
+  background:
+    radial-gradient(circle at top, #003354 0%, #001321 45%, #000814 100%);
 }
 
 #card-flip .flip-wrap{
@@ -686,18 +687,18 @@ will-change: transform;
   font-size: clamp(26px, 2.2vw, 40px);
   line-height: 1.2;
   letter-spacing: .2px;
-  color: #001A27;
+  color: #F9FAFB;              /* antes era #001A27 */
 }
 
 #card-flip .flip-intro{
   margin: 0 0 16px 0;
-  color: #001A27;
+  color: #E2F1FF;              /* antes era #001A27 */
 }
 
 /* Flip container */
 #card-flip .flip{
   display: inline-block;
-  perspective: 1200px; /* profundidade do 3D */
+  perspective: 1200px;
   cursor: pointer;
   margin: 20px 0 40px;
 }
@@ -712,11 +713,11 @@ will-change: transform;
 #card-flip .flip-card{
   position: relative;
   height: min(420px, 90vw);
-  aspect-ratio: 20/27;          /* proporção sugerida */
+  aspect-ratio: 20/27;
   transform-style: preserve-3d;
   transition: transform .6s cubic-bezier(.2,.7,.2,1);
   border-radius: 16px;
-  box-shadow: 0 12px 32px rgba(0,0,0,.12);
+  box-shadow: 0 16px 34px rgba(0,0,0,.35); /* um pouco mais forte pro fundo escuro */
 }
 
 /* Faces */
@@ -732,6 +733,7 @@ will-change: transform;
   gap: 8px;
   border: 1px solid rgba(7,35,47,.08);
 }
+
 #card-flip .flip-front{
   background: #F7FCFF;
   align-content: space-between;
@@ -768,13 +770,13 @@ will-change: transform;
   transform: rotateY(180deg);
 }
 
-/* Foco acessível no container da carta */
+/* Foco acessível */
 #card-flip .flip:focus-within .flip-card{
   outline: 3px solid #07232F;
   outline-offset: 4px;
 }
 
-/* CTA da seção */
+/* CTA da seção — pode manter o mesmo */
 #card-flip .flip-cta a{
   display: block;
   margin: auto;
@@ -802,6 +804,7 @@ will-change: transform;
 }
 #card-flip .flip-cta a:active{ transform: translateY(0); }
 
+/* ===== Prova social ===== */
 #prova-social{
   padding: 30px 15px;
   background: #FFA857;
