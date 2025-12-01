@@ -1644,11 +1644,14 @@ will-change: transform;
 }
 /* ===== Seção: FAQ ===== */
 
+/* ===== Seção: FAQ — versão Black Friday (ajuste sutil) ===== */
+
 #faq.faqx{
-  padding: 30px 15px;
-  background:rgb(255, 168, 87);
-  color: #06202B;
-  border-top: 1px solid rgba(7,35,47,.06);
+  padding: 40px 15px 50px;
+  background:
+    radial-gradient(circle at top, #001f3f 0%, #000c1f 45%, #000814 100%); /* fundo escuro, alinhado com o resto */
+  color: #F9FAFB;
+  border-top: 1px solid rgba(15, 23, 42, .5);
 }
 
 #faq.faqx .faqx__wrap{
@@ -1666,11 +1669,12 @@ will-change: transform;
   margin: 0 0 12px 0;
   font-size: clamp(26px, 2.2vw, 40px);
   line-height: 1.12;
+  color: #F9FAFB;              /* título claro no fundo escuro */
 }
 
 #faq.faqx .faqx__lead{
   margin: 0 0 16px 0;
-  color: #173845;
+  color: #E2F1FF;              /* subtítulo clarinho */
   line-height: 1.55;
   font-size: clamp(16px, 1.4vw, 19px);
 }
@@ -1679,27 +1683,27 @@ will-change: transform;
 #faq.faqx .faqx__grid{
   display: grid;
   gap: 12px;
-  grid-template-columns: 1fr;         /* mobile */
+  grid-template-columns: 1fr;
   max-width: 700px;
   margin: auto;
 }
 
-/* Item FAQ (details como card de papel) */
+/* Item FAQ (details como card) */
 #faq.faqx .faqx__item{
-  background: #ffe7c7;
+  background: #FFF4E5; /* um pouquinho mais claro que o #ffe7c7 pra destacar do fundo escuro */
   border: 1px solid rgba(7,35,47,.08);
   border-radius: 16px;
-  box-shadow: 0 8px 22px rgba(0,0,0,.08);
-  padding: 0;                          /* summary controla o padding principal */
+  box-shadow: 0 10px 26px rgba(0,0,0,.20); /* sombra um pouco mais forte pra flutuar */
+  padding: 0;
   overflow: clip;
-  transition: border-color .2s ease, box-shadow .2s ease;
+  transition: border-color .2s ease, box-shadow .2s ease, transform .15s ease;
 }
 
 /* Summary (linha clicável) */
 #faq.faqx .faqx__item > summary{
-  list-style: none;                     /* remove disclosure padrão */
+  list-style: none;
   display: grid;
-  grid-template-columns: 1fr auto; /* pergunta | caret */
+  grid-template-columns: 1fr auto;
   align-items: center;
   gap: 10px;
   padding: 14px 14px;
@@ -1721,12 +1725,10 @@ will-change: transform;
 /* '+' animado */
 #faq.faqx .toggle-icon{
   font-size: 22px;
-  width: 28px;               /* mesma largura e altura */
+  width: 28px;
   height: 28px;
-  display: grid;               /* para centralizar */
+  display: grid;
   place-items: center;
-  width: 28px;                 /* mesma largura e altura */
-  height: 28px;
   line-height: 1;
   font-weight: 900;
   color: #0B3140;
@@ -1738,26 +1740,28 @@ will-change: transform;
   transform: rotate(360deg);
 }
 
-/* Conteúdo com animação suave */
+/* Conteúdo com animação suave (JS já cuida da height) */
 #faq.faqx .faqx__content{
   overflow: hidden;
   height: 0;
-  transition: height .7s ease;  /* controla a velocidade */
+  transition: height .7s ease;
 }
 
 #faq.faqx .texto-dentro{
   padding: 0px 14px 15px 14px;
 }
 
-/* padding extra só quando estiver aberto */
-#faq.faqx .faqx__item[open] .faqx__content{
-  height: auto;                 /* deixa ajustar à altura do conteúdo */
-  padding: 0px 14px 0px 14px;
-}
-
 /* texto do conteúdo */
-#faq.faqx p{ margin: 0; color: #173845; line-height: 1.55; }
-#faq.faqx ul{ margin: 0; padding-left: 30px; color: #173845; }
+#faq.faqx p{
+  margin: 0;
+  color: #173845;
+  line-height: 1.55;
+}
+#faq.faqx ul{
+  margin: 0;
+  padding-left: 30px;
+  color: #173845;
+}
 #faq.faqx li{ line-height: 1.5; }
 
 /* Hover/foco acessível */
@@ -1772,48 +1776,45 @@ will-change: transform;
 }
 
 #faq.faqx .faqx__item:hover{
-  box-shadow: 0 12px 28px rgba(0,0,0,.10);
+  box-shadow: 0 14px 30px rgba(0,0,0,.3);
+  transform: translateY(-1px);
 }
 
-/* CTA final */
+/* CTA final (mesmo estilo dos outros botões principais) */
 #faq.faqx .faqx__cta a{
   display: block;
   width: fit-content;
-  margin: auto;
-  color:#fff;
+  margin: 40px auto 0;
+  color:#001A27;
   font-weight:700;
   font-size: clamp(14px, 12px + 0.4vw, 18px);
   letter-spacing:.5px;
   padding: 12px 29px;
   border:0;
   border-radius:999px;
-  background:#1b99d8;
+  background:#3FBFFF;
   text-transform:uppercase;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.26);
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.35);
   cursor:pointer;
   transition: transform .06s ease, filter .2s ease;
   text-decoration: none;
-  margin-top: 40px;
   text-align: center;
 }
 
 #faq.faqx .faqx__cta a:hover{
-  filter: brightness(1.1);
-  background-color: #3FBFFF;
+  filter: brightness(1.05);
+  background-color: #1b99d8;
   transform: scale(1.05);
   color: #001A27;
 }
 
-#faq.faqx .faqx__cta a:active{ transform: translateY(0); }
-
-
-
-
-
+#faq.faqx .faqx__cta a:active{
+  transform: translateY(0);
+}
 
 /* ===== Footer ===== */
 section.footer-content {
-  background-color: #0074AD;
+  background-color: #000814;
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 15px 0px 15px;
@@ -1834,7 +1835,7 @@ div.footer-logo {
 }
 
 footer p {
-  background-color: #0074AD;
+  background-color: #000814;
   text-align: center;
   color: #fff;
   font-size: 12px;
