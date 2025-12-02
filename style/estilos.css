@@ -23,6 +23,7 @@ html{ scroll-behavior: smooth; } /* se quiser scroll suave nativo */
 :root{
   --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, "Noto Sans", sans-serif;
   --font-heading: "Poppins", var(--font-body);
+  --title-gradient: radial-gradient(circle at 30% 0%, #fff7d1 0%, #FFE86D 35%, #FFA858 70%, #FF7A3C 100%);
 }
 
 html{ font-family: var(--font-body); }
@@ -43,6 +44,51 @@ h1,h2,h3,h4{ font-family: var(--font-heading); letter-spacing:.1px; }
   scroll-margin-top: calc(var(--urg-h, 40px));
 } 
 
+/* ===== Barra Black Friday ===== */
+.bf-bar{
+  position: sticky;         /* “gruda” no topo durante o scroll */
+  top: 0;
+  z-index: 999;
+  background: #001A27;
+  color: #F7FCFF;
+  font-size: 0.9rem;
+  padding: 6px 12px;
+  border-bottom: 1px solid rgba(255,232,109,.35);
+}
+
+.bf-bar__wrap{
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+
+.bf-bar__timer{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.bf-bar__pill{
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(255,232,109,.08);
+  font-variant-numeric: tabular-nums;
+}
+
+.bf-bar__pill span{
+  font-weight: 700;
+}
 
 /* ===== Seções principais ===== */
 
@@ -51,24 +97,7 @@ h1,h2,h3,h4{ font-family: var(--font-heading); letter-spacing:.1px; }
     /* fundo só em tons escuros/azuis */
     background:
       radial-gradient(circle at top, #004d7a 0%, #001A27 45%, #000814 100%);
-    padding: 0px 15px 30px 15px;
-}
-
-/* Badge Black Friday: amarelo em cima do fundo escuro */
-#hero.hero--bf .hero-badge{
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 6px 16px;
-  margin-bottom: 14px;
-  border-radius: 999px;
-  background: #FFE86D;
-  color: #001A27;
-  font-weight: 600;
-  font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: .08em;
-  text-align: center;
+    padding: 30px 15px 30px 15px;
 }
 
 /* Títulos e subtítulo claros, legíveis no fundo escuro */
@@ -84,11 +113,46 @@ h1,h2,h3,h4{ font-family: var(--font-heading); letter-spacing:.1px; }
   text-shadow: #000c272a 2px 2px 2px;
 }
 
+/* Texto com degradê dentro do selo */
+.hero-bf-fire__text{
+  display: inline-block;
+  background-image: var(--title-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent; /* importante pro Chrome/Safari */
+  font-weight: 800;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+}
+
+/* Animação da chama (bem sutil) */
+@keyframes bf-fire {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: .6;
+  }
+  50% {
+    transform: translateY(-1px) scale(1.03);
+    opacity: .95;
+  }
+  100% {
+    transform: translateY(-2px) scale(1.05);
+    opacity: .7;
+  }
+}
+
 /* Destaque do desconto em amarelo */
 #hero .hero-desconto{
+  display: inline-block;
+  background-image: var(--title-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent; /* importante pro Chrome/Safari */
   font-weight: 800;
-  color: #FFE86D;
-  text-shadow: #000c272a 2px 2px 2px;
+  letter-spacing: .03em;
+  text-transform: uppercase;
 }
 
 
@@ -119,7 +183,7 @@ h1,h2,h3,h4{ font-family: var(--font-heading); letter-spacing:.1px; }
 
 #hero .hero-sub{
   margin: 0;
-  font-size: clamp(16px, 2.1vw, 22px);
+  font-size: clamp(16px, 2.1vw, 20px);
   line-height: 1.45;
   color: #001A27;
   max-width: 65ch;
@@ -874,7 +938,7 @@ will-change: transform;
   border-radius: 999px;
   object-fit: cover;
   box-shadow: 0 8px 22px rgba(0,0,0,.25);
-  border: 4px solid #FFE86D;   /* borda amarelo destaque */
+  border: 4px solid #0074AD;   /* borda amarelo destaque */
   margin-bottom: 15px;
 }
 
@@ -885,7 +949,7 @@ will-change: transform;
 
 #prova-social .ps-slide figcaption strong{ 
   font-weight: 800; 
-  color: #FFE86D;   /* nome com cor de destaque */
+  color: #0089ce;   /* nome com cor de destaque */
 }
 
 /* Quote */
@@ -1136,6 +1200,21 @@ will-change: transform;
   text-align: center;
 }
 
+.ofx--play .ofx__eyebrow{
+  font-size: 0.85rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #FFE86D;
+  margin-bottom: 6px;
+}
+
+.ofx--play .ofx__highlight{
+  background: linear-gradient(90deg, #FFE86D, #3FBFFF);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 .ofx--play h2{
   margin: 0 0 20px 0;
   font-size: clamp(26px, 2.2vw, 40px);
@@ -1144,9 +1223,29 @@ will-change: transform;
 }
 
 .ofx--play .ofx__sub{
-  margin: 0 0 26px 0;
+  margin: 0 0 30px 0;
   color: #E2F1FF;              /* mais clarinho pro fundo dark */
   font-size: clamp(16px, 1.4vw, 19px);
+}
+
+.plano-card__badge-oferta{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: #FF4E4E;
+  color: #FDFDFD;
+  font-size: 1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  box-shadow: 0 4px 12px rgba(0,0,0,.22);
+  height: 55px;
+  width: 55px;
+  transform: rotate(10deg);
+  transform: translate(30px, -15px) rotate(10deg); /* direita 10px, para cima 8px */
+  
 }
 
 /* CTA (mantém estilo, só garante contraste no fundo escuro) */
@@ -1185,27 +1284,10 @@ will-change: transform;
   justify-content: center;
 }
 
-/* Selo extra de Black Friday */
-.plano-card--anual::before{
-  content: "BLACK FRIDAY";
-  position: absolute;
-  top: -14px;
-  right: 24px;
-  padding: 4px 10px;
-  font-size: 0.7rem;
-  font-weight: 800;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  border-radius: 999px;
-  background: linear-gradient(135deg, #FFE86D, #FF9F3C);
-  color: #001321;
-  box-shadow: 0 4px 10px rgba(0,0,0,.35);
-}
-
 /* Deixa o preço do anual com leve brilho */
 .plano-card--anual .plano-card__price{
   color: #0B3140;
-  text-shadow: 0 0 12px rgba(255,232,109,.7);
+  text-shadow: 0 0 25px rgba(255, 233, 109, 0.821);
 }
 
 .plano-card__container{
@@ -1217,7 +1299,7 @@ will-change: transform;
   border-radius: 34px;
   border: 1px solid rgba(7,35,47,.08);
   box-shadow: 0 10px 26px rgba(0,0,0,.12);
-  padding: 25px 20px 25px;
+  padding: 10px 20px 25px 10px;
   max-width: 100%;   /* deixa o grid controlar a largura */
   height: 100%;      /* pra todos os cards ficarem com a mesma altura na linha */
   box-shadow: 5px 7px 0 0 #0074AD;
@@ -1238,7 +1320,7 @@ will-change: transform;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 8px;
+  height: 38px;
 }
 
 .plano-card__tag{
@@ -1256,18 +1338,6 @@ will-change: transform;
 .plano-card--semestral .plano-card__tag{ background:#FFE86D; }
 .plano-card--anual .plano-card__tag{ background:#FFE86D; }
 
-.plano-card__selo{
-  display: inline-block;
-  padding: 4px 5px;
-  border-radius: 999px;
-  background: #ffc38ac0;
-  border: 1px dashed #D66700;
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: #0B3140;
-  text-align: center;
-}
-
 .plano-card__body{
   margin-top: 2px;
   margin-bottom: 10px;
@@ -1284,24 +1354,39 @@ will-change: transform;
 .plano-card__price-box{
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 12px;
-  margin: 4px 0 12px;
+  margin: 0 0 12px;
   flex-wrap: wrap;
 }
 
 .plano-card__price-col{
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  align-items: center;
+  gap: 4px;
 }
 
 .plano-card__price-old{
   margin: 0;
-  font-size: 0.85rem;
-  color: #355564;
+  font-size: 1rem;
+  color: #173845;
   opacity: .75;
+}
+
+.plano-card__strike{
   text-decoration: line-through;
+}
+
+/* "6x de" / "12x de" acima do preço grande */
+.plano-card__times{
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: #0B3140;
+  text-align: center;
 }
 
 .plano-card__per{
@@ -1311,16 +1396,17 @@ will-change: transform;
   margin-left: 4px;
 }
 
-.plano-card__desc{
-  margin: 6px 0 10px;
-  font-size: 0.93rem;
-  color: #173845;
-}
-
 .bonus {
   font-weight: 700;
   color: #0B3140;
   margin: 18px 0 0;
+}
+
+/* linha com o total no semestre/ano ou explicação do mensal */
+.plano-card__total{
+  margin: 0;
+  font-size: 0.85rem;
+  color: #355564;
 }
 
 .plano-card__list{
@@ -1358,23 +1444,6 @@ will-change: transform;
   background: #FFD13A;
 }
 
-/* container do selo de desconto */
-.plano-card__off{
-  flex-shrink: 0;
-}
-
-/* SVG do selo */
-.plano-card__off-tag{
-  display: block;
-  width: 88px;
-  height: auto;
-}
-
-/* opcional: deixa o anual um pouco mais “aceso” */
-.plano-card--anual .plano-card__price{
-  text-shadow: 0 0 14px rgba(255,232,109,.65);
-}
-
 /* ===== Seção: Formulário ===== */
 .formx{
   display: flex;
@@ -1389,8 +1458,9 @@ will-change: transform;
 .formx .formx__wrap{
   max-width:600px;
   margin:0 auto;
-  padding:24px 24px 28px;
+  padding:30px 30px;
   width:100%;
+  max-width: 560px;
   background:#F7FCFF;
   border-radius:24px;
   box-shadow:0 18px 40px rgba(0,0,0,.35);
@@ -1538,7 +1608,7 @@ will-change: transform;
   flex-direction:column;    /* continua empilhado no mobile */
   max-width:1400px;
   margin:0 auto;
-  padding:50px 15px 60px;
+  padding:50px 35px 60px;
   gap:32px;
 }
 
@@ -1639,6 +1709,12 @@ will-change: transform;
   color: #355564;
 }
 
+#termos-garantia{
+  color: #355564;
+  font-size: 0.85rem;
+  opacity: .9;
+}
+
 .garantia-card__list li + li{
   margin-top: 2px;
 }
@@ -1690,7 +1766,7 @@ will-change: transform;
 
 /* Item FAQ (details como card) */
 #faq.faqx .faqx__item{
-  background: #FFF4E5; /* um pouquinho mais claro que o #ffe7c7 pra destacar do fundo escuro */
+  background: #E7F7FF; /* um pouquinho mais claro que o #ffe7c7 pra destacar do fundo escuro */
   border: 1px solid rgba(7,35,47,.08);
   border-radius: 16px;
   box-shadow: 0 10px 26px rgba(0,0,0,.20); /* sombra um pouco mais forte pra flutuar */

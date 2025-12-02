@@ -50,30 +50,40 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
+    <!-- Barra Black Friday fixa -->
+    <div class="bf-bar" id="bf-bar" role="banner">
+        <div class="bf-bar__wrap">
+
+            <span class="bf-bar__timer" aria-live="polite">
+                Termina em 
+                <span class="bf-bar__pill">
+                    <span id="bf-days">00</span>d
+                    <span id="bf-hours">00</span>h
+                    <span id="bf-mins">00</span>min
+                    <span id="bf-secs">00</span>s
+                </span>
+            </span>
+
+        </div>
+    </div>
+    
     <!-- 1) Hero -->
     <section id="hero" class="hero--bf">
         <div class="hero-wrap">
-            <!-- Badge Black Friday -->
-            <div class="hero-badge">
-                🔥 BLACK FRIDAY ACADEMY CARDS — desconto por tempo limitado
-            </div>
-
             <div class="texto-imagem">
                 <div class="hero-texto">
                     <h1>
-                        <span class="destaque">Black Friday</span>
-                        na Academy Cards.
-                        Revise toda matéria do
-                        <span class="destaque">ENEM</span>:
-                        com <span class="hero-desconto">até XX% OFF</span>
+                        <span class="hero-bf-fire__text">Black Friday</span><br>
+                        na Academy Cards.<br>
+                        Estude para o
+                        <span class="destaque">ENEM</span>:<br>
+                        com <span class="hero-desconto"> 50% OFF</span>
                     </h1>
 
                     <p class="hero-sub">
-                        Só até <strong>DD/MM</strong>:
-                        acesso a <strong>+15.000 flashcards</strong> organizados por matéria e tópico,
+                        Tenha acesso a <strong>+15.000 flashcards</strong> organizados por matéria,
                         com revisão inteligente, para estudar em
-                        <strong>15–30 minutos por dia</strong>, onde e quando quiser —
-                        pagando <strong>bem menos na Black Friday</strong>.
+                        <strong>15–30 minutos por dia</strong>, onde e quando quiser.
                     </p>
                 </div>
 
@@ -493,9 +503,10 @@
     <section id="oferta" class="ofx ofx--play" aria-labelledby="oferta-title">
         <div class="ofx__wrap">
             <header class="ofx__header">
-                <h2 id="oferta-title">Promoção Black Friday Academy Cards</h2>
+                <p class="ofx__eyebrow">BLACK FRIDAY ACADEMY CARDS</p>
+                <h2 id="oferta-title">Todos os planos com <span class="ofx__highlight">50% de desconto</span></h2>
                 <p class="ofx__sub">
-                    Planos com desconto por tempo limitado. Mesma plataforma, mesmo conteúdo completo — agora com preço especial.
+                    Escolha o plano que combina com você, pague metade do preço e estude com mais de 15.000 flashcards até o ENEM.
                 </p>
             </header>
 
@@ -505,42 +516,23 @@
                     <article class="plano-card plano-card--mensal">
                         <div class="plano-card__top">
                             <span class="plano-card__tag">MENSAL</span>
+                            <span class="plano-card__badge-oferta">-50%</span>
                         </div>
                         <div class="plano-card__body">
                             <!-- Bloco de preço com de/por + selo -->
                             <div class="plano-card__price-box">
                                 <div class="plano-card__price-col">
                                     <p class="plano-card__price-old">
-                                        de <span class="plano-card__currency">R$</span>73,90
-                                        <span class="plano-card__per">/mês</span>
+                                        De <span class="plano-card__strike">R$ 73,90</span> por apenas:
                                     </p>
                                     <p class="plano-card__price">
-                                        por <span class="plano-card__currency">R$</span>59,90
-                                        <span class="plano-card__per">/mês</span>
+                                        R$ 36,95 <span class="plano-card__per">/mês</span>
+                                    </p>
+                                    <p class="plano-card__total">
+                                        50% OFF na sua mensalidade na Black Friday.
                                     </p>
                                 </div>
-                                <div class="plano-card__off" aria-hidden="true">
-                                    <!-- selo SVG de desconto -->
-                                    <svg class="plano-card__off-tag" viewBox="0 0 90 30">
-                                        <defs>
-                                            <linearGradient id="offGradMensal" x1="0" y1="0" x2="1" y2="1">
-                                                <stop offset="0" stop-color="#FFE86D"/>
-                                                <stop offset="1" stop-color="#FFA858"/>
-                                            </linearGradient>
-                                        </defs>
-                                        <path d="M4 0h74a4 4 0 0 1 4 4v22a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V4a4 4 0 0 1 4-4z"
-                                            fill="url(#offGradMensal)"/>
-                                        <text x="50%" y="55%" text-anchor="middle" dominant-baseline="middle"
-                                            font-size="11" font-weight="700" fill="#001321">
-                                            20% OFF
-                                        </text>
-                                    </svg>
-                                </div>
                             </div>
-
-                            <p class="plano-card__desc">
-                                Ideal para quem quer testar agora e decidir depois. Sem fidelidade.
-                            </p>
                             <ul class="plano-card__list">
                                 <li>Acesso a +15.000 flashcards organizados por tema</li>
                                 <li>Revisões programadas com algoritmo personalizado</li>
@@ -558,40 +550,24 @@
                     <article class="plano-card plano-card--semestral">
                         <div class="plano-card__top">
                             <span class="plano-card__tag">SEMESTRAL</span>
+                            <span class="plano-card__badge-oferta">-50%</span>
                         </div>
                         <div class="plano-card__body">
                             <div class="plano-card__price-box">
                                 <div class="plano-card__price-col">
                                     <p class="plano-card__price-old">
-                                        de <span class="plano-card__currency">R$</span>52,48
-                                        <span class="plano-card__per">/mês</span>
+                                        De <span class="plano-card__strike">R$ 314,88</span> por apenas:
                                     </p>
                                     <p class="plano-card__price">
-                                        por <span class="plano-card__currency">R$</span>44,90
-                                        <span class="plano-card__per">/mês</span>
+                                        <span class="plano-card__times">6x de</span> R$ 26,24
+                                    </p>
+                                    <p class="plano-card__total">
+                                        Total de R$ 157,44 no semestre (50% OFF).
                                     </p>
                                 </div>
-                                <div class="plano-card__off" aria-hidden="true">
-                                    <svg class="plano-card__off-tag" viewBox="0 0 90 30">
-                                        <defs>
-                                            <linearGradient id="offGradSem" x1="0" y1="0" x2="1" y2="1">
-                                                <stop offset="0" stop-color="#FFE86D"/>
-                                                <stop offset="1" stop-color="#FFA858"/>
-                                            </linearGradient>
-                                        </defs>
-                                        <path d="M4 0h74a4 4 0 0 1 4 4v22a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V4a4 4 0 0 1 4-4z"
-                                            fill="url(#offGradSem)"/>
-                                        <text x="50%" y="55%" text-anchor="middle" dominant-baseline="middle"
-                                            font-size="11" font-weight="700" fill="#001321">
-                                            15% OFF
-                                        </text>
-                                    </svg>
-                                </div>
+
                             </div>
 
-                            <p class="plano-card__desc">
-                                6 meses de acesso com desconto especial para manter consistência até o meio da sua jornada.
-                            </p>
                             <ul class="plano-card__list">
                                 <li>Tudo do plano mensal</li>
                                 <li>Economia em relação ao plano mensal ao longo de 6 meses*</li>
@@ -611,41 +587,23 @@
                     <article class="plano-card plano-card--anual">
                         <div class="plano-card__top">
                             <span class="plano-card__tag">ANUAL</span>
-                            <span class="plano-card__selo">Melhor custo-benefício</span>
+                            <span class="plano-card__badge-oferta plano-card__badge-oferta--destaque">-50%</span>
                         </div>
                         <div class="plano-card__body">
                             <div class="plano-card__price-box">
                                 <div class="plano-card__price-col">
                                     <p class="plano-card__price-old">
-                                        de <span class="plano-card__currency">R$</span>42,07
-                                        <span class="plano-card__per">/mês</span>
+                                        De <span class="plano-card__strike">R$ 504,84</span> por apenas:
                                     </p>
                                     <p class="plano-card__price">
-                                        por <span class="plano-card__currency">R$</span>34,90
-                                        <span class="plano-card__per">/mês</span>
+                                        <span class="plano-card__times">12x de</span> R$ 21,04
                                     </p>
-                                </div>
-                                <div class="plano-card__off" aria-hidden="true">
-                                    <svg class="plano-card__off-tag" viewBox="0 0 100 30">
-                                        <defs>
-                                            <linearGradient id="offGradAnual" x1="0" y1="0" x2="1" y2="1">
-                                                <stop offset="0" stop-color="#FFE86D"/>
-                                                <stop offset="1" stop-color="#FFA858"/>
-                                            </linearGradient>
-                                        </defs>
-                                        <path d="M4 0h84a4 4 0 0 1 4 4v22a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V4a4 4 0 0 1 4-4z"
-                                            fill="url(#offGradAnual)"/>
-                                        <text x="50%" y="55%" text-anchor="middle" dominant-baseline="middle"
-                                            font-size="11" font-weight="700" fill="#001321">
-                                            20% OFF
-                                        </text>
-                                    </svg>
+                                    <p class="plano-card__total">
+                                        Total de R$ 252,48 no ano (50% OFF).
+                                    </p>
                                 </div>
                             </div>
 
-                            <p class="plano-card__desc">
-                                12 meses de acesso com o maior desconto. Ideal para quem quer se preparar com calma para o ENEM.
-                            </p>
                             <ul class="plano-card__list">
                                 <li>Tudo do plano mensal</li>
                                 <li>Economia máxima em relação ao plano mensal ao longo de 12 meses*</li>
@@ -757,6 +715,9 @@
                                 <p class="garantia-card__text">
                                     Se você for aprovado em uma universidade pública usando o Academy Cards como parte da sua preparação,
                                     nós devolvemos <strong>100% do valor investido</strong> na assinatura.
+                                </p>
+                                <p id="termos-garantia">
+                                    <em>*Válido somente para planos anuais</em>
                                 </p>
                             </div>
                         </article>
@@ -1146,52 +1107,6 @@
         })();
     </script>
 
-    <!-- Menu mobile -->
-    <script>
-        (function(){
-            const header = document.querySelector('.site-header');
-            if (!header) return;
-
-            const toggle = header.querySelector('.site-header__toggle');
-            const nav    = header.querySelector('.site-header__nav');
-
-            if (!toggle || !nav) return;
-
-            // Abre/fecha o menu
-            toggle.addEventListener('click', function () {
-                const isOpen = header.classList.toggle('is-open');
-                toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-            });
-
-            // Ao clicar em algum link de âncora do menu, fecha o menu no mobile
-            nav.addEventListener('click', function (e) {
-                const link = e.target.closest('a[href^="#"]');
-                if (!link) return;
-                header.classList.remove('is-open');
-                toggle.setAttribute('aria-expanded', 'false');
-            });
-        })();
-    </script>
-
-    <!-- Efeito de scroll no header -->
-    <script>
-        (function() {
-            const header = document.querySelector('.site-header');
-            if (!header) return;
-
-            function handleScroll() {
-            if (window.scrollY > 10) {
-                header.classList.add('is-scrolled');
-            } else {
-                header.classList.remove('is-scrolled');
-            }
-            }
-
-            window.addEventListener('scroll', handleScroll, { passive: true });
-            handleScroll(); // já aplica o estado certo ao carregar
-        })();
-    </script>
-
     <!-- FAQ: animação de abrir/fechar -->
     <script>
         (function () {
@@ -1247,6 +1162,63 @@
         })();
     </script>
 
+    <!-- Barra de contagem regressiva -->
+    <script>
+      (function(){
+        const bar      = document.getElementById('bf-bar');
+        if (!bar) return;
+
+        const elDays   = document.getElementById('bf-days');
+        const elHours  = document.getElementById('bf-hours');
+        const elMins   = document.getElementById('bf-mins');
+        const elSecs   = document.getElementById('bf-secs');
+
+        // 🔧 AJUSTE AQUI A DATA/HORA QUE A OFERTA TERMINA
+        // Formato: ano, mês (0–11), dia, hora, minuto, segundo
+        const endDate = new Date(2025, 11, 9, 23, 59, 59); 
+        // Exemplo acima: 30/11/2025 23:59:59 (mês 10 = novembro)
+
+        function pad(n){
+          return n < 10 ? '0' + n : String(n);
+        }
+
+        function updateCountdown(){
+          const now  = new Date();
+          let diff   = endDate.getTime() - now.getTime();
+
+          if (diff <= 0){
+            // Oferta acabou
+            elDays.textContent  = '00';
+            elHours.textContent = '00';
+            elMins.textContent  = '00';
+            elSecs.textContent  = '00';
+
+            // Opcional: mudar texto quando acabar
+            const label = bar.querySelector('.bf-bar__timer');
+            if (label){
+              label.textContent = 'Oferta encerrada 😢';
+            }
+            clearInterval(timer);
+            return;
+          }
+
+          const sec  = Math.floor(diff / 1000);
+          const days = Math.floor(sec / 86400);
+          const hrs  = Math.floor((sec % 86400) / 3600);
+          const mins = Math.floor((sec % 3600) / 60);
+          const secs = sec % 60;
+
+          if (elDays)  elDays.textContent  = pad(days);
+          if (elHours) elHours.textContent = pad(hrs);
+          if (elMins)  elMins.textContent  = pad(mins);
+          if (elSecs)  elSecs.textContent  = pad(secs);
+        }
+
+        // Atualiza imediatamente e depois a cada segundo
+        updateCountdown();
+        const timer = setInterval(updateCountdown, 1000);
+      })();
+    </script>
 
 </body>
 </html>
