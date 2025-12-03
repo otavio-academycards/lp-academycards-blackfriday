@@ -10,6 +10,7 @@
 /* 768–991.98 px — tablet */
 @media (min-width:768px) and (max-width:900px){
 #hero .hero-wrap{ padding: 15px 48px 28px 48px; }
+#hero h1{ font-size: clamp(37px, 3vw, 50px); max-width: 460px; display: block; margin: 0 auto; text-align: center; }
 #hero .hero-imagem img{ max-width:420px; }
 #proposta-valor .provas-wrap{ padding: 28px 48px; }
 #proposta-valor .pv-grid{ grid-template-columns: repeat(2, minmax(0,1fr)); }
@@ -32,9 +33,9 @@
 /* 992–1199.98 px — tablet largo / desktop pequeno */
 @media (min-width:900px) and (max-width:1199.98px){
 #hero .texto-imagem{ display:grid; grid-template-columns: 1.1fr .9fr; gap:30px; align-items:center; margin: 50px 0 40px 0; }
-#hero .hero-imagem img{ width:100%; max-width:520px; min-width: 360px; }
+#hero .hero-imagem img{ width:100%; max-width:520px; }
 #hero .hero-sub{ width: 90%; }
-#hero h1{ font-size: clamp(37px, 3vw, 50px); }
+#hero h1{ font-size: clamp(37px, 3vw, 50px); max-width: 460px;}
 #hero .hero-wrap{ padding: 25px 60px 40px 60px;}
 #proposta-valor .pv-grid{ grid-template-columns: repeat(2, minmax(0,1fr)); max-width: 70vw;}
 #proposta-valor .valores-wrap{ padding: 35px; }
@@ -78,7 +79,7 @@
 #hero .texto-imagem{ display:grid; grid-template-columns: 1.1fr .9fr; gap:30px; align-items:center; margin: 50px 0 40px 0; }
 #hero .hero-imagem img{ width:100%; max-width:520px; min-width: 360px; }
 #hero .hero-sub{ width: 90%; }
-#hero h1{ font-size: clamp(37px, 3vw, 50px); }
+#hero h1{ font-size: clamp(37px, 3vw, 55px); max-width: 500px;}
 #hero .hero-wrap{ padding: 25px 60px 40px 60px;}
 #proposta-valor .pv-grid{ grid-template-columns: repeat(2, minmax(0,1fr)); max-width: 65vw;}
 #proposta-valor .valores-wrap{ padding: 35px; }

@@ -198,7 +198,6 @@ h1,h2,h3,h4{ font-family: var(--font-heading); letter-spacing:.1px; }
 
 #hero .hero-imagem img{
   width: 70vw;
-  max-width: min(100%, 460px);
 }
 
 #hero .hero-cta a{
@@ -317,6 +316,8 @@ h1,h2,h3,h4{ font-family: var(--font-heading); letter-spacing:.1px; }
 #proposta-valor .pv-cta a{
   display: block;
   margin: auto;
+  text-align: center;
+  background:#3FBFFF;
   color:#001A27;
   font-weight:700;
   font-size: clamp(14px, 12px + 0.4vw, 18px);
@@ -324,20 +325,18 @@ h1,h2,h3,h4{ font-family: var(--font-heading); letter-spacing:.1px; }
   padding: 12px 29px;
   border:0;
   border-radius:999px;
-  background:#3FBFFF;
-  text-align: center;
   text-transform:uppercase;
-  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.35);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.26);
   cursor:pointer;
-  transition: transform .06s ease, filter .2s ease;
   text-decoration: none;
+  transition: transform .06s ease, filter .2s ease;
 }
 
 #proposta-valor .pv-cta a:hover{
-  filter: brightness(1.05);
+  filter: brightness(1.2);
   background-color: #3FBFFF;
+  color:#001A27;
   transform: scale(1.05);
-  color: #001A27;
 }
 #proposta-valor .pv-cta a:active{ transform: translateY(0); }
 
@@ -704,30 +703,29 @@ will-change: transform;
 /* CTA da seção */
 #como-funciona .cf-cta a{
   display: block;
-  width: fit-content;
   margin: auto;
-  color:#fff;
+  text-align: center;
+  background:#3FBFFF;
+  color:#001A27;
+  width: fit-content;
   font-weight:700;
   font-size: clamp(14px, 12px + 0.4vw, 18px);
   letter-spacing:.5px;
   padding: 12px 29px;
   border:0;
   border-radius:999px;
-  background:#1b99d8;
   text-transform:uppercase;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.26);
   cursor:pointer;
   text-decoration: none;
-  margin-top: 40px;
-  margin-bottom: 20px;
   transition: transform .06s ease, filter .2s ease;
 }
 
 #como-funciona .cf-cta a:hover{
-  filter: brightness(1);
+  filter: brightness(1.2);
   background-color: #3FBFFF;
+  color:#001A27;
   transform: scale(1.05);
-  color: #001A27;
 }
 #como-funciona .cf-cta a:active{ transform: translateY(0); }
 
@@ -844,27 +842,28 @@ will-change: transform;
 #card-flip .flip-cta a{
   display: block;
   margin: auto;
-  width: fit-content;
+  text-align: center;
+  background:#3FBFFF;
   color:#001A27;
+  width: fit-content;
   font-weight:700;
   font-size: clamp(14px, 12px + 0.4vw, 18px);
   letter-spacing:.5px;
   padding: 12px 29px;
   border:0;
   border-radius:999px;
-  background:#FFE86D;
   text-transform:uppercase;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.26);
   cursor:pointer;
-  transition: transform .06s ease, filter .2s ease;
   text-decoration: none;
+  transition: transform .06s ease, filter .2s ease;
 }
 
 #card-flip .flip-cta a:hover{
-  filter: brightness(1.1);
-  background-color: #FFE86D;
+  filter: brightness(1.2);
+  background-color: #3FBFFF;
+  color:#001A27;
   transform: scale(1.05);
-  color: #001A27;
 }
 #card-flip .flip-cta a:active{ transform: translateY(0); }
 
@@ -1006,7 +1005,8 @@ will-change: transform;
 #prova-social .ps-cta a{
   display: block;
   margin: auto;
-  width: fit-content;
+  text-align: center;
+  background:#3FBFFF;
   color:#001A27;
   font-weight:700;
   font-size: clamp(14px, 12px + 0.4vw, 18px);
@@ -1014,19 +1014,18 @@ will-change: transform;
   padding: 12px 29px;
   border:0;
   border-radius:999px;
-  background:#FFE86D;       /* botão amarelo padrão da LP */
   text-transform:uppercase;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.26);
   cursor:pointer;
-  transition: transform .06s ease, filter .2s ease;
   text-decoration: none;
-  margin-top: 20px;
+  transition: transform .06s ease, filter .2s ease;
 }
 
 #prova-social .ps-cta a:hover{
-  filter: brightness(1.05);
+  filter: brightness(1.2);
+  background-color: #3FBFFF;
+  color:#001A27;
   transform: scale(1.05);
-  color: #001A27;
 }
 #prova-social .ps-cta a:active{ transform: translateY(0); }
 
@@ -1153,16 +1152,18 @@ will-change: transform;
 /* CTA já está alinhado com o resto (botão azul), mantive igual */
 #para-quem-e .pqe-map__cta a{
   display: block;
-  width: fit-content;
-  margin: 40px auto 0;
-  color:#fff;
+  margin: auto;
+  margin-top: 35px;
+  text-align: center;
+  background:#3FBFFF;
+  color:#001A27;
   font-weight:700;
+  width: fit-content;
   font-size: clamp(14px, 12px + 0.4vw, 18px);
   letter-spacing:.5px;
   padding: 12px 29px;
   border:0;
   border-radius:999px;
-  background:#1b99d8;
   text-transform:uppercase;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.26);
   cursor:pointer;
@@ -1171,10 +1172,10 @@ will-change: transform;
 }
 
 #para-quem-e .pqe-map__cta a:hover{
-  filter: brightness(1);
+  filter: brightness(1.2);
   background-color: #3FBFFF;
+  color:#001A27;
   transform: scale(1.05);
-  color: #001A27;
 }
 #para-quem-e .pqe-map__cta a:active{ transform: translateY(0); }
 
@@ -1251,29 +1252,30 @@ will-change: transform;
 /* CTA (mantém estilo, só garante contraste no fundo escuro) */
 .ofx--play .ofx__btn a{
   display: block;
-  width: fit-content;
-  margin: 40px auto 0;
+  margin: auto;
+  margin-top: 35px;
+  text-align: center;
+  background:#3FBFFF;
   color:#001A27;
   font-weight:700;
+  width: fit-content;
   font-size: clamp(14px, 12px + 0.4vw, 18px);
   letter-spacing:.5px;
   padding: 12px 29px;
   border:0;
   border-radius:999px;
-  background:#FFE86D;
   text-transform:uppercase;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.26);
   cursor:pointer;
   text-decoration: none;
   transition: transform .06s ease, filter .2s ease;
-  text-align: center;
 }
 
 .ofx--play .ofx__btn a:hover{
-  filter: brightness(1.05);
-  background-color: #FFE86D;
+  filter: brightness(1.2);
+  background-color: #3FBFFF;
+  color:#001A27;
   transform: scale(1.05);
-  color: #001A27;
 }
 .ofx--play .ofx__btn a:active{ transform: translateY(0); }
 
@@ -1554,29 +1556,31 @@ will-change: transform;
 
 /* CTA & microcopy */
 .formx .formx__cta button{
-  display:block;
-  width:fit-content;
-  margin:32px auto 0;
+  display: block;
+  margin: auto;
+  margin-top: 35px;
+  text-align: center;
+  background:#3FBFFF;
   color:#001A27;
   font-weight:700;
-  font-size:clamp(14px,12px + 0.4vw,18px);
+  width: fit-content;
+  font-size: clamp(14px, 12px + 0.4vw, 18px);
   letter-spacing:.5px;
-  padding:12px 28px;
+  padding: 12px 29px;
   border:0;
   border-radius:999px;
-  background:#FFE86D;                 /* amarelo BF */
   text-transform:uppercase;
-  box-shadow:0px 0px 16px rgba(0,0,0,0.32);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.26);
   cursor:pointer;
-  text-decoration:none;
-  transition:transform .08s ease, filter .2s ease;
+  text-decoration: none;
+  transition: transform .06s ease, filter .2s ease;
 }
 
 .formx .formx__cta button:hover{
-  filter:brightness(1.05);
-  background-color:#FFEE8A;
-  transform:scale(1.05);
+  filter: brightness(1.2);
+  background-color: #3FBFFF;
   color:#001A27;
+  transform: scale(1.05);
 }
 
 .formx .formx__cta button:active{ transform: translateY(0); }
@@ -1723,7 +1727,7 @@ will-change: transform;
 /* ===== Seção: FAQ — versão Black Friday (ajuste sutil) ===== */
 
 #faq.faqx{
-  padding: 40px 15px 50px;
+  padding: 40px 15px 20px;
   background:
     radial-gradient(circle at top, #001f3f 0%, #000c1f 45%, #000814 100%); /* fundo escuro, alinhado com o resto */
   color: #F9FAFB;
@@ -1859,29 +1863,30 @@ will-change: transform;
 /* CTA final (mesmo estilo dos outros botões principais) */
 #faq.faqx .faqx__cta a{
   display: block;
-  width: fit-content;
-  margin: 40px auto 0;
+  margin: auto;
+  text-align: center;
+  background:#3FBFFF;
   color:#001A27;
   font-weight:700;
+  width: fit-content;
   font-size: clamp(14px, 12px + 0.4vw, 18px);
   letter-spacing:.5px;
   padding: 12px 29px;
   border:0;
   border-radius:999px;
-  background:#3FBFFF;
   text-transform:uppercase;
-  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.35);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.26);
   cursor:pointer;
-  transition: transform .06s ease, filter .2s ease;
   text-decoration: none;
-  text-align: center;
+  transition: transform .06s ease, filter .2s ease;
+  margin-top: 35px;
 }
 
 #faq.faqx .faqx__cta a:hover{
-  filter: brightness(1.05);
-  background-color: #1b99d8;
+  filter: brightness(1.2);
+  background-color: #3FBFFF;
+  color:#001A27;
   transform: scale(1.05);
-  color: #001A27;
 }
 
 #faq.faqx .faqx__cta a:active{
@@ -1898,16 +1903,16 @@ section.footer-content {
 
 div.redes-sociais {
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
   align-items: center;
   gap: 16px;
-  padding-left: 10px;
 }
 
 div.footer-logo {
   display: flex;
-  justify-content: flex-end;
-  padding-right: 40px;
+  align-items: center;
+  gap: 16px;
+  padding-left: 30px;
 }
 
 footer p {
