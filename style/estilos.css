@@ -1249,6 +1249,7 @@ will-change: transform;
   
 }
 
+
 /* CTA (mantém estilo, só garante contraste no fundo escuro) */
 .ofx--play .ofx__btn a{
   display: block;
@@ -1289,7 +1290,6 @@ will-change: transform;
 /* Deixa o preço do anual com leve brilho */
 .plano-card--anual .plano-card__price{
   color: #0B3140;
-  text-shadow: 0 0 25px rgba(255, 233, 109, 0.821);
 }
 
 .plano-card__container{
@@ -1305,7 +1305,49 @@ will-change: transform;
   max-width: 100%;   /* deixa o grid controlar a largura */
   height: 100%;      /* pra todos os cards ficarem com a mesma altura na linha */
   box-shadow: 5px 7px 0 0 #0074AD;
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
 }
+
+.plano-card__container:not(.plano-card__container--destaque){
+  opacity: 0.97;
+}
+
+/* Destaque pro ANUAL */
+.plano-card__container--destaque{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #F7FCFF;
+  border-radius: 34px;
+  border: 2px solid #FFE86D;              /* borda amarela mais forte */
+  box-shadow:
+    0 18px 40px rgba(0,0,0,.35),
+    6px 9px 0 0 #0074AD;                  /* “degrau” azul um pouco maior */
+  background: #FDFCF7;
+  padding: 10px 20px 25px 10px;
+  max-width: 100%;   /* deixa o grid controlar a largura */
+  height: 100%;      /* pra todos os cards ficarem com a mesma altura na linha */
+}
+
+/* selo “plano mais vantajoso” acima do card */
+.plano-card__container--destaque::before{
+  content: "PLANO MAIS VANTAJOSO";
+  text-align: center;
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  padding: 4px 14px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #FFE86D, #FF4E4E);
+  color: #001321;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 12px rgba(0,0,0,.35);
+}
+
 
 .plano-card{
   position: relative;
